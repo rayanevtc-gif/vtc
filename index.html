@@ -5,231 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VTC Paris</title>
     <style>
-        /* Style global */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            color: #333;
         }
 
-        /* Header */
-        header {
-            background-color: #4CAF50;
-            padding: 20px 0;
-            text-align: center;
-            color: white;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
-
-        /* Barre de navigation */
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        /* Sections */
         section {
-            padding: 40px 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px 0;
         }
 
-        section h2 {
-            font-size: 30px;
+        h2 {
             text-align: center;
+            font-size: 24px;
             color: #333;
         }
 
-        /* Contact */
-        #contact p {
-            font-size: 18px;
-            text-align: center;
-        }
-
-        /* Formulaire de réservation */
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        form label {
-            font-size: 18px;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        form input, form select, form button {
+        input, select, button {
             width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
+            margin: 10px 0;
             border-radius: 5px;
         }
 
-        form button {
+        button {
             background-color: #4CAF50;
             color: white;
+            border: none;
             cursor: pointer;
         }
 
-        form button:hover {
+        button:hover {
             background-color: #45a049;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            section {
-                padding: 20px;
-            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
-    <header>
-        <h1>VTC Paris</h1>
-        <p>Votre chauffeur privé à Paris et environs</p>
-    </header>
-
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#tarifs">Tarifs</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#reservation">Réservation</a></li>
-        </ul>
-    </nav>
-
-    <!-- Section Services -->
-    <section id="services">
-        <h2>Nos Services</h2>
-        <div style="display: flex; justify-content: center; gap: 20px;">
-            <div style="width: 300px; text-align: center; padding: 20px; background-color: #e9f7e9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <h3>Transport Aéroport</h3>
-                <p>VTC privé pour Paris CDG, Orly et autres aéroports</p>
-            </div>
-            <div style="width: 300px; text-align: center; padding: 20px; background-color: #e9f7e9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <h3>Transfert Disneyland</h3>
-                <p>Trajet direct vers Disneyland Paris en confort et sécurité</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Tarifs -->
-    <section id="tarifs">
-        <h2>Nos Tarifs</h2>
-        <ul style="list-style-type: none; padding: 0; text-align: center;">
-            <li><strong>Paris CDG :</strong> 55 €</li>
-            <li><strong>Paris Disneyland :</strong> 65 €</li>
-            <li><strong>Paris Orly :</strong> 50 €</li>
-        </ul>
-    </section>
-
-    <!-- Section Contact -->
-    <section id="contact">
+    <section id="contact" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
         <h2>Contactez-nous</h2>
-        <p>Vous pouvez nous joindre par téléphone au :</p>
-        <p style="font-size: 24px; font-weight: bold; color: #4CAF50;">06 38 62 06 64</p>
-        <p>Nous sommes disponibles pour des trajets dans la région de Paris.</p>
+        <p style="font-size: 18px; text-align: center;">Vous pouvez nous joindre par téléphone au :</p>
+        <p style="font-size: 24px; text-align: center; font-weight: bold; color: #4CAF50;">06 38 62 06 64</p>
+        <p style="text-align: center; font-size: 18px;">Je suis disponible pour des trajets dans la région de Paris.</p>
     </section>
 
-    <!-- Section Réservation -->
-    <section id="reservation">
+    <section id="reservation" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px;">
         <h2>Réservez votre trajet</h2>
-        <form id="reservationForm" action="#" method="post">
-            <label for="destination">Destination :</label>
-            <select name="destination" id="destination">
+        <form id="reservationForm" action="#" method="post" style="max-width: 600px; margin: 0 auto;">
+            <label for="destination" style="font-size: 18px;">Destination :</label>
+            <select name="destination" id="destination" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px;">
                 <option value="paris_cdg">Paris CDG</option>
                 <option value="paris_disney">Paris Disneyland</option>
                 <option value="paris_orly">Paris Orly</option>
             </select>
-
-            <label for="date">Date de départ :</label>
-            <input type="date" name="date" id="date" required>
-
-            <label for="time">Heure de départ :</label>
-            <input type="time" name="time" id="time" required>
-
-            <button type="submit">Réserver</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 VTC Paris. Tous droits réservés.</p>
-    </footer>
-
-    <script>
-        // Simple confirmation for form submission
-        document.getElementById("reservationForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const destination = document.getElementById("destination").value;
-            const date = document.getElementById("date").value;
-            const time = document.getElementById("time").value;
-            alert(`Votre réservation a bien été prise en compte !\n\nDestination: ${destination}\nDate: ${date}\nHeure: ${time}`);
-        });
-    </script>
-
-</body>
-</html>
+            
+            <label for="date" style="font-size: 18px;">Date de départ :</label>
+            <input type="date" name="date" id="date" style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px;" required>
+            
+            <label for="time" style="font-size: 18px;">Heure de départ :</label>
+            <input type="time" name="time" id="time" style="width: 100%; padding: 10px; margin: 10px 0; border-radius
