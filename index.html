@@ -9,13 +9,155 @@
     <meta name="robots" content="index, follow">
     <title>Transport Paris - Banlieue | VTC, Transports Aéroport et Privatisation</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin: 40px 10%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            font-size: 1.1rem;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        .vehicle-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form input, form select, form button {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section {
+                margin: 20px 5%;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <h1>Transport Paris - Banlieue</h1>
-        <p>Réservez un VTC confortable pour vos trajets à Paris et en banlieue. Service rapide, sécurisé et disponible 24h/24.</p>
+        <p>Réservez votre VTC à Paris, Disneyland, CDG, Orly, Beauvais et bien plus. Service rapide et sécurisé.</p>
     </header>
 
     <nav>
@@ -28,7 +170,7 @@
 
     <section id="services">
         <h2>Nos Services de Transport</h2>
-        <p>Nous proposons un large éventail de services pour répondre à vos besoins de transport à Paris et en banlieue :</p>
+        <p>Nous proposons un service VTC personnalisé pour vos trajets à Paris et en banlieue. Découvrez nos tarifs :</p>
         <ul>
             <li>VTC Paris - Aéroport CDG : 55€</li>
             <li>VTC Paris - Disneyland : 65€</li>
@@ -37,35 +179,34 @@
             <li>VTC Paris - Reims : 350€</li>
             <li>Privatisation pour 40€/h</li>
         </ul>
-        <p><strong>Voiture utilisée : Toyota Prius</strong></p>
-        <p>Capacité : 4 passagers, bagages payants (10€ par bagage supplémentaire).</p>
-        <img src="100751i.jpg" alt="Toyota Prius VTC Paris" class="vehicle-image">
+        <p><strong>Voiture utilisée : Toyota Prius (4 places disponibles).<br> Bagages payants : 10€ par bagage supplémentaire.</strong></p>
+        <img src="100751i.jpg" alt="Toyota Prius VTC" class="vehicle-image">
     </section>
 
     <section id="reservations">
         <h2>Réservez votre VTC</h2>
-        <p>Complétez le formulaire ci-dessous pour réserver votre VTC en ligne :</p>
+        <p>Pour réserver votre trajet, remplissez le formulaire ci-dessous :</p>
         <form action="https://formspree.io/f/xzzrenkq" method="POST">
             <label for="name">Votre nom :</label>
-            <input type="text" id="name" name="name" required><br>
+            <input type="text" id="name" name="name" required>
 
             <label for="email">Votre e-mail :</label>
-            <input type="email" id="email" name="email" required><br>
+            <input type="email" id="email" name="email" required>
 
             <label for="phone">Numéro de téléphone :</label>
-            <input type="tel" id="phone" name="phone" required><br>
+            <input type="tel" id="phone" name="phone" required>
 
             <label for="location">Lieu de départ :</label>
-            <input type="text" id="location" name="location" required><br>
+            <input type="text" id="location" name="location" required>
 
             <label for="destination">Destination :</label>
-            <input type="text" id="destination" name="destination" required><br>
+            <input type="text" id="destination" name="destination" required>
 
             <label for="departure-time">Heure de départ :</label>
-            <input type="datetime-local" id="departure-time" name="departure-time" required><br>
+            <input type="datetime-local" id="departure-time" name="departure-time" required>
 
             <label for="luggage">Nombre de bagages :</label>
-            <input type="number" id="luggage" name="luggage" min="0" value="0"><br>
+            <input type="number" id="luggage" name="luggage" min="0" value="0">
 
             <button type="submit">Réserver</button>
         </form>
@@ -73,23 +214,12 @@
 
     <section id="contact">
         <h2>Contactez-Nous</h2>
-        <p>Pour toute question, n'hésitez pas à nous contacter via notre formulaire ou directement par téléphone au 06 38 62 06 64.</p>
+        <p>Pour toute question, contactez-nous par e-mail ou téléphone au 06 38 62 06 64. Nous sommes là pour vous aider !</p>
     </section>
 
     <footer>
         <p>&copy; 2025 Transport Paris - Banlieue | Tous droits réservés.</p>
     </footer>
 
-    <!-- Optimisation pour le SEO -->
-    <script>
-        // Le site s'ajuste en fonction des comportements des utilisateurs et du contenu.
-        document.addEventListener('DOMContentLoaded', function () {
-            // Exemple de script pour améliorer l'expérience utilisateur
-            const reserveButton = document.querySelector('button[type="submit"]');
-            reserveButton.addEventListener('click', function () {
-                alert("Merci pour votre réservation ! Nous vous contacterons sous peu.");
-            });
-        });
-    </script>
 </body>
 </html>
