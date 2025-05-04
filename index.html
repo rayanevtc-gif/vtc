@@ -75,6 +75,16 @@
       width: 250px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
     }
 
     .card h3 {
@@ -142,22 +152,34 @@
 <p class="intro">
   Disponible sur Paris et banlieue – Trajets longues distances possibles – 📞 06 38 62 06 64
 </p>
+
 <p class="notice">
   Service simple et accessible – Véhicule classique, pas de prestation haut de gamme
 </p>
 
 <section id="tarifs" class="tarifs">
   <div class="card">
+    <img src="https://via.placeholder.com/250x150.png?text=Véhicule+Classique" alt="Véhicule classique">
     <h3>Paris ➜ CDG</h3>
     <p>55€</p>
   </div>
   <div class="card">
+    <img src="https://via.placeholder.com/250x150.png?text=Véhicule+Classique" alt="Véhicule classique">
     <h3>Paris ➜ Disneyland</h3>
     <p>65€</p>
   </div>
   <div class="card">
+    <img src="https://via.placeholder.com/250x150.png?text=Véhicule+Classique" alt="Véhicule classique">
     <h3>Orly ➜ Paris</h3>
     <p>50€</p>
+  </div>
+</section>
+
+<section class="tarifs">
+  <div class="card">
+    <img src="https://via.placeholder.com/250x150.png?text=Toyota+Prius" alt="Toyota Prius">
+    <h3>Véhicule utilisé : Toyota Prius</h3>
+    <p>4 places disponibles. Si plus de 2 bagages, 10€ par bagage supplémentaire.</p>
   </div>
 </section>
 
