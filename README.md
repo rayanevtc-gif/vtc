@@ -11,7 +11,3 @@ Bienvenue sur mon projet de service VTC. Ce projet permet aux utilisateurs de r√
 
 ## Installation
 
-Clonez le projet :
-```bash
-git clone https://github.com/rayanevtc-gif/vtc.git
-<nav style="background-color: #333; padding: 10px;">
