@@ -20,9 +20,10 @@
     }
 
     .car-image {
-      width: 100%; /* Pour que l'image prenne toute la largeur disponible */
-      height: auto; /* Pour garder les proportions */
-      border-radius: 10px; /* Arrondi des coins */
+      width: 80%; /* Légèrement plus petite que l'image pleine largeur */
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
     }
 
     .tarifs {
@@ -30,6 +31,7 @@
       justify-content: center;
       padding: 20px;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .card {
@@ -39,6 +41,7 @@
       width: 250px;
       padding: 20px;
       text-align: center;
+      margin-top: 20px;
     }
 
     .card h3 {
@@ -59,27 +62,62 @@
       bottom: 0;
       width: 100%;
     }
+
+    .contact-info {
+      font-size: 16px;
+    }
+
+    .contact-info strong {
+      color: #28a745;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Header avec le titre du site -->
   <header>
     <h1>VTC Service - Réservez votre trajet maintenant</h1>
     <p>Disponible à Paris et banlieue. Courses basiques, trajet longue distance possible.</p>
   </header>
 
+  <!-- Section des tarifs avec l'image de la voiture -->
   <section class="tarifs">
     <div class="card">
-      <!-- Image du véhicule -->
+      <!-- Image de la voiture -->
       <img src="images/100751i.jpg" alt="Toyota Prius" class="car-image">
       <h3>Véhicule utilisé : Toyota Prius</h3>
       <p>4 places disponibles. Si plus de 2 bagages, 10€ par bagage supplémentaire.</p>
     </div>
   </section>
 
+  <!-- Section des tarifs -->
+  <section class="tarifs">
+    <div class="card">
+      <h3>Paris CDG</h3>
+      <p>55€</p>
+      <p>Disponible 24h/24</p>
+    </div>
+    <div class="card">
+      <h3>Paris Disney</h3>
+      <p>65€</p>
+      <p>Disponible 24h/24</p>
+    </div>
+    <div class="card">
+      <h3>Paris Orly</h3>
+      <p>50€</p>
+      <p>Disponible 24h/24</p>
+    </div>
+  </section>
+
+  <!-- Section contact -->
+  <section class="contact-info">
+    <p>Vous pouvez me contacter au : <strong>06 38 62 06 64</strong></p>
+    <p>Je suis disponible sur Paris et banlieue. Trajet longue distance possible.</p>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>Contactez-moi au : <strong>06 38 62 06 64</strong></p>
-    <p>Disponible sur Paris et banlieue. Trajet longue distance possible.</p>
+    <p>&copy; 2025 VTC Service. Tous droits réservés.</p>
   </footer>
 
 </body>
