@@ -19,8 +19,13 @@
       padding: 20px 0;
     }
 
+    .logo {
+      width: 50px;
+      height: auto;
+    }
+
     .car-image {
-      width: 80%; /* Légèrement plus petite que l'image pleine largeur */
+      width: 80%;
       height: auto;
       border-radius: 10px;
       margin-bottom: 20px;
@@ -53,6 +58,78 @@
       color: #555;
     }
 
+    .reservation form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      margin: 20px auto;
+    }
+
+    .reservation input,
+    .reservation button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .reservation button {
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+    }
+
+    .reservation button:hover {
+      background-color: #218838;
+    }
+
+    .avis {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .avis-carte {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .contact-rapide {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .contact-button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .contact-button:hover {
+      background-color: #218838;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
     footer {
       background-color: #333;
       color: white;
@@ -63,19 +140,19 @@
       width: 100%;
     }
 
-    .contact-info {
-      font-size: 16px;
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
     }
 
-    .contact-info strong {
-      color: #28a745;
-    }
   </style>
 </head>
 <body>
 
-  <!-- Header avec le titre du site -->
+  <!-- Header avec le logo et le titre -->
   <header>
+    <img src="images/logo.png" alt="Logo VTC Service" class="logo">
     <h1>VTC Service - Réservez votre trajet maintenant</h1>
     <p>Disponible à Paris et banlieue. Courses basiques, trajet longue distance possible.</p>
   </header>
@@ -83,7 +160,6 @@
   <!-- Section des tarifs avec l'image de la voiture -->
   <section class="tarifs">
     <div class="card">
-      <!-- Image de la voiture -->
       <img src="images/100751i.jpg" alt="Toyota Prius" class="car-image">
       <h3>Véhicule utilisé : Toyota Prius</h3>
       <p>4 places disponibles. Si plus de 2 bagages, 10€ par bagage supplémentaire.</p>
@@ -109,15 +185,60 @@
     </div>
   </section>
 
-  <!-- Section contact -->
-  <section class="contact-info">
-    <p>Vous pouvez me contacter au : <strong>06 38 62 06 64</strong></p>
-    <p>Je suis disponible sur Paris et banlieue. Trajet longue distance possible.</p>
+  <!-- Formulaire de réservation -->
+  <section class="reservation">
+    <h2>Réservez votre trajet</h2>
+    <form action="#" method="POST">
+      <label for="depart">Lieu de départ :</label>
+      <input type="text" id="depart" name="depart" placeholder="Ex: Paris, Orly...">
+
+      <label for="arrivee">Lieu d'arrivée :</label>
+      <input type="text" id="arrivee" name="arrivee" placeholder="Ex: Paris, Disney...">
+
+      <label for="date">Date et heure :</label>
+      <input type="datetime-local" id="date" name="date">
+
+      <label for="passagers">Nombre de passagers :</label>
+      <input type="number" id="passagers" name="passagers" min="1" max="4" value="1">
+
+      <label for="bagages">Nombre de bagages :</label>
+      <input type="number" id="bagages" name="bagages" min="0" value="0">
+
+      <button type="submit">Réserver</button>
+    </form>
   </section>
 
-  <!-- Footer -->
+  <!-- Section des avis clients -->
+  <section class="avis">
+    <h2>Ce que disent nos clients</h2>
+    <div class="avis-carte">
+      <p>"Service exceptionnel ! Très ponctuel et agréable." - Client 1</p>
+    </div>
+    <div class="avis-carte">
+      <p>"Voyage très confortable et prix raisonnable." - Client 2</p>
+    </div>
+  </section>
+
+  <!-- Section Google Maps -->
+  <section class="map">
+    <h2>Localisation des trajets</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- Section Contact Rapide -->
+  <section class="contact-rapide">
+    <a href="tel:+33638620664" class="contact-button">Appeler maintenant</a>
+    <a href="https://wa.me/33638620664" target="_blank" class="contact-button">Contacter via WhatsApp</a>
+  </section>
+
+  <!-- Footer avec mentions légales et réseaux sociaux -->
   <footer>
     <p>&copy; 2025 VTC Service. Tous droits réservés.</p>
+    <a href="https://www.facebook.com/vtcservice" target="_blank">Facebook</a> | 
+    <a href="https://www.instagram.com/vtcservice" target="_blank">Instagram</a> | 
+    <a href="mailto:contact@vtcservice.com">Email</a> | 
+    <a href="/mentions-legales.html">Mentions légales</a> | 
+    <a href="/politique-confidentialite.html">Politique de confidentialité</a>
   </footer>
 
 </body>
