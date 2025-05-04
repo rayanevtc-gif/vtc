@@ -2,199 +2,176 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rayane VTC - Réservez votre chauffeur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transport Paris Banlieue VTC - Réservation Chauffeur Privé</title>
+  <meta name="description" content="Transport Paris Banlieue VTC - Réservez votre chauffeur privé vers CDG, Orly, Disneyland, Beauvais, Reims. Trajets simples ou mise à disposition 40€/h.">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
+      background-color: #f5f5f5;
       color: #333;
     }
 
     header {
-      background-color: #27ae60;
-      padding: 40px 20px;
+      background-color: #2ecc71;
       color: white;
       text-align: center;
+      padding: 1rem 0;
     }
 
     header h1 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
+      margin: 0;
+      font-size: 2rem;
     }
 
-    header p {
-      font-size: 1.2em;
-    }
-
-    .cta {
-      margin-top: 20px;
-    }
-
-    .cta a {
-      background: white;
-      color: #27ae60;
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: 0.3s;
-    }
-
-    .cta a:hover {
-      background-color: #2ecc71;
-      color: white;
-    }
-
-    .content {
+    .container {
       max-width: 1000px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 1rem;
     }
 
-    .vehicle-img {
+    .hero {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .hero img {
+      max-width: 300px;
       width: 100%;
-      max-width: 500px;
-      display: block;
-      margin: 30px auto;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
-    .info, .reservation, .tarifs {
+    .info, .tarifs, .reservation, .footer {
+      margin: 2rem 0;
       background: white;
+      padding: 1rem 2rem;
       border-radius: 10px;
-      padding: 25px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
       color: #27ae60;
+      margin-bottom: 1rem;
     }
 
-    .tarifs ul {
+    ul {
       list-style: none;
-      padding: 0;
+      padding-left: 0;
     }
 
-    .tarifs li {
-      padding: 10px 0;
-      border-bottom: 1px solid #eee;
+    ul li {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
     }
 
-    form label {
-      display: block;
-      margin-top: 15px;
-      font-weight: bold;
+    form {
+      display: grid;
+      gap: 1rem;
     }
 
-    form input, form select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border-radius: 5px;
+    input, select {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border-radius: 6px;
       border: 1px solid #ccc;
     }
 
-    form button {
-      margin-top: 20px;
-      padding: 12px 20px;
+    button {
       background-color: #27ae60;
       color: white;
+      padding: 0.7rem;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
-      font-size: 1em;
     }
 
-    form button:hover {
-      background-color: #2ecc71;
+    button:hover {
+      background-color: #219150;
     }
 
-    footer {
+    .footer {
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #666;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1rem;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Rayane VTC</h1>
-    <p>Chauffeur VTC à Paris et banlieue – Toyota Prius (4 places)</p>
-    <div class="cta">
-      <a href="#reservation">Réserver un trajet</a>
-    </div>
+    <h1>Transport Paris Banlieue VTC</h1>
+    <p>📞 06 38 62 06 64 – Disponible sur Paris, banlieue & longues distances</p>
   </header>
 
-  <div class="content">
+  <div class="container">
 
-    <img src="100751i.jpg" alt="Voiture Toyota Prius" class="vehicle-img" />
+    <div class="hero">
+      <img src="100751i.jpg" alt="Toyota Prius VTC Paris">
+      <p>Véhicule : Toyota Prius – 4 places disponibles. Bagage supplémentaire : +10€ au-delà de 2.</p>
+    </div>
 
     <div class="info">
-      <h2>À propos</h2>
-      <p>Je propose des trajets confortables à petit prix dans Paris, sa banlieue et au-delà. Courses simples en Toyota Prius. Bagages : supplément de 10 € par bagage au-delà de 2.</p>
-      <p><strong>Mise à disposition :</strong> 40 € / heure (chauffeur privé sur Paris ou banlieue).</p>
-      <p><strong>📞 Téléphone :</strong> 06 38 62 06 64</p>
+      <h2>Services proposés</h2>
+      <ul>
+        <li>✅ Trajets aéroports : CDG, Orly, Beauvais</li>
+        <li>✅ Disneyland Paris & Reims</li>
+        <li>✅ Mise à disposition : 40€/heure</li>
+        <li>✅ Véhicule simple, confort de base</li>
+      </ul>
     </div>
 
     <div class="tarifs">
       <h2>Tarifs fixes</h2>
       <ul>
         <li>Paris → CDG : 55 €</li>
-        <li>Paris → Disneyland : 65 €</li>
         <li>Paris → Orly : 50 €</li>
+        <li>Paris → Disneyland : 65 €</li>
+        <li>Paris → Beauvais : 170 €</li>
+        <li>Paris → Reims : 350 €</li>
       </ul>
     </div>
 
-    <div class="reservation" id="reservation">
-      <h2>Réserver votre trajet</h2>
+    <div class="reservation">
+      <h2>Réserver un trajet</h2>
       <form>
-        <label for="name">Nom et Prénom</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="passagers">Nombre de passagers</label>
-        <select id="passagers" name="passagers">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-        </select>
-
-        <label for="bagages">Nombre de bagages</label>
-        <select id="bagages" name="bagages">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3 ou plus</option>
-        </select>
-
-        <label for="depart">Adresse de départ</label>
-        <input type="text" id="depart" name="depart" required />
-
-        <label for="arrivee">Adresse d’arrivée</label>
-        <input type="text" id="arrivee" name="arrivee" required />
-
-        <label for="date">Date</label>
-        <input type="date" id="date" name="date" required />
-
-        <label for="heure">Heure</label>
-        <input type="time" id="heure" name="heure" required />
-
-        <button type="submit">Envoyer la demande</button>
+        <label>Nom complet : <input type="text" required></label>
+        <label>Nombre de passagers : <input type="number" min="1" max="4" required></label>
+        <label>Nombre de bagages : <input type="number" min="0" required></label>
+        <label>Trajet souhaité :
+          <select required>
+            <option value="">-- Choisir --</option>
+            <option>Paris → CDG</option>
+            <option>Paris → Orly</option>
+            <option>Paris → Disneyland</option>
+            <option>Paris → Beauvais</option>
+            <option>Paris → Reims</option>
+            <option>Mise à disposition (40€/h)</option>
+          </select>
+        </label>
+        <label>Horaire de départ : <input type="datetime-local" required></label>
+        <label>Téléphone : <input type="tel" required></label>
+        <button type="submit">Envoyer la réservation</button>
       </form>
     </div>
 
-  </div>
+    <div class="footer">
+      &copy; 2025 Transport Paris Banlieue VTC – Tous droits réservés.
+    </div>
 
-  <footer>
-    © 2025 Rayane VTC — Service fiable et accessible
-  </footer>
+  </div>
 
 </body>
 </html>
