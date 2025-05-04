@@ -1,214 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rayane VTC Paris</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VTC Service</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #e3f9e5; /* Fond vert clair */
-      color: #333;
+      padding: 0;
     }
 
     header {
-      background-image: url('https://images.unsplash.com/photo-1591326798047-4381f5bcd4f7?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDJ8fHZlZGlzfGVufDB8fHx8fDE2NTYwNjA0NzE&ixlib=rb-1.2.1&q=80&w=1080'); /* Image de fond plus lumineuse */
-      background-size: cover;
-      background-position: center;
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background-color: #28a745; /* Couleur verte */
       color: white;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
-    }
-
-    header h1 {
-      font-size: 48px;
-      background-color: rgba(0,0,0,0.5);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    nav {
-      background-color: #2ecc71; /* Vert vif */
-      padding: 10px;
       text-align: center;
+      padding: 20px 0;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    .intro, .notice {
-      text-align: center;
-      margin: 20px 10px;
-    }
-
-    .intro {
-      font-size: 18px;
-      font-weight: bold;
-      color: #2c3e50;
-    }
-
-    .notice {
-      font-size: 16px;
-      color: #777;
+    .car-image {
+      width: 100%; /* Pour que l'image prenne toute la largeur disponible */
+      height: auto; /* Pour garder les proportions */
+      border-radius: 10px; /* Arrondi des coins */
     }
 
     .tarifs {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
       padding: 20px;
+      gap: 20px;
     }
 
     .card {
-      background: white;
+      background-color: white;
       border-radius: 10px;
-      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       width: 250px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
       text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
     }
 
     .card h3 {
-      color: #007bff;
+      color: #28a745;
     }
 
-    .form-section {
-      background-color: white;
-      padding: 30px;
-      margin: 30px auto;
-      max-width: 500px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-
-    label, input, select {
-      display: block;
-      width: 100%;
-      margin-top: 10px;
-      font-size: 16px;
-    }
-
-    input, select {
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      margin-top: 20px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
-      width: 100%;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background-color: #0056b3;
+    .card p {
+      font-size: 14px;
+      color: #555;
     }
 
     footer {
-      background-color: #2c3e50;
+      background-color: #333;
       color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Rayane VTC Paris</h1>
-</header>
+  <header>
+    <h1>VTC Service - Réservez votre trajet maintenant</h1>
+    <p>Disponible à Paris et banlieue. Courses basiques, trajet longue distance possible.</p>
+  </header>
 
-<nav>
-  <a href="#tarifs">Tarifs</a>
-  <a href="#reservation">Réserver</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <section class="tarifs">
+    <div class="card">
+      <!-- Image du véhicule -->
+      <img src="images/100751i.jpg" alt="Toyota Prius" class="car-image">
+      <h3>Véhicule utilisé : Toyota Prius</h3>
+      <p>4 places disponibles. Si plus de 2 bagages, 10€ par bagage supplémentaire.</p>
+    </div>
+  </section>
 
-<p class="intro">
-  Disponible sur Paris et banlieue – Trajets longues distances possibles – 📞 06 38 62 06 64
-</p>
-
-<p class="notice">
-  Service simple et accessible – Véhicule classique, pas de prestation haut de gamme
-</p>
-
-<section id="tarifs" class="tarifs">
-  <div class="card">
-    <img src="https://via.placeholder.com/250x150.png?text=Véhicule+Classique" alt="Véhicule classique">
-    <h3>Paris ➜ CDG</h3>
-    <p>55€</p>
-  </div>
-  <div class="card">
-    <img src="https://via.placeholder.com/250x150.png?text=Véhicule+Classique" alt="Véhicule classique">
-    <h3>Paris ➜ Disneyland</h3>
-    <p>65€</p>
-  </div>
-  <div class="card">
-    <img src="https://via.placeholder.com/250x150.png?text=Véhicule+Classique" alt="Véhicule classique">
-    <h3>Orly ➜ Paris</h3>
-    <p>50€</p>
-  </div>
-</section>
-
-<section class="tarifs">
-  <div class="card">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Toyota_Prius_III_–_Frontansicht.jpg/1200px-Toyota_Prius_III_–_Frontansicht.jpg" alt="Toyota Prius">
-    <h3>Véhicule utilisé : Toyota Prius</h3>
-    <p>4 places disponibles. Si plus de 2 bagages, 10€ par bagage supplémentaire.</p>
-  </div>
-</section>
-
-<section id="reservation" class="form-section">
-  <h2 style="text-align:center; color:#2c3e50;">Réserver un trajet</h2>
-  <form>
-    <label for="trajet">Choisissez un trajet :</label>
-    <select id="trajet" name="trajet">
-      <option value="cdg">Paris ➜ CDG</option>
-      <option value="disney">Paris ➜ Disneyland</option>
-      <option value="orly">Orly ➜ Paris</option>
-    </select>
-
-    <label for="horaire">Choisissez un horaire :</label>
-    <input type="datetime-local" id="horaire" name="horaire" />
-
-    <button type="submit">Envoyer la demande</button>
-  </form>
-</section>
-
-<section id="contact" class="form-section">
-  <h2 style="text-align:center; color:#2c3e50;">Contact</h2>
-  <p style="text-align:center">Pour toute information ou réservation directe :</p>
-  <p style="text-align:center; font-size:18px; font-weight:bold; color:#007bff;">06 38 62 06 64</p>
-</section>
-
-<footer>
-  <p>&copy; 2025 Rayane VTC – Tous droits réservés</p>
-</footer>
+  <footer>
+    <p>Contactez-moi au : <strong>06 38 62 06 64</strong></p>
+    <p>Disponible sur Paris et banlieue. Trajet longue distance possible.</p>
+  </footer>
 
 </body>
 </html>
