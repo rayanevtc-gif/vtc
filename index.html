@@ -1,245 +1,178 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VTC Service</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VTC Service à Paris. Disponible 24h/24, transport confortable avec Toyota Prius. Réservez votre trajet vers CDG, Orly, Disneyland.">
+    <title>VTC Service - Transport privé à Paris | Réservez maintenant</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #333;
+        }
 
-    header {
-      background-color: #28a745; /* Couleur verte */
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
 
-    .logo {
-      width: 50px;
-      height: auto;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
 
-    .car-image {
-      width: 80%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-    .tarifs {
-      display: flex;
-      justify-content: center;
-      padding: 20px;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+        .cta-button {
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-    .card {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      padding: 20px;
-      text-align: center;
-      margin-top: 20px;
-    }
+        .cta-button:hover {
+            background-color: #45a049;
+        }
 
-    .card h3 {
-      color: #28a745;
-    }
+        .section {
+            margin: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-    .card p {
-      font-size: 14px;
-      color: #555;
-    }
+        .section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
 
-    .reservation form {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 300px;
-      margin: 20px auto;
-    }
+        .section .content {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
 
-    .reservation input,
-    .reservation button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
+        .section .content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
-    .reservation button {
-      background-color: #28a745;
-      color: white;
-      cursor: pointer;
-    }
+        .section .content p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
 
-    .reservation button:hover {
-      background-color: #218838;
-    }
+        .section .content a {
+            font-size: 1.2em;
+        }
 
-    .avis {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-      flex-wrap: wrap;
-    }
+        .pricing-table {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
 
-    .avis-carte {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 250px;
-      padding: 20px;
-      text-align: center;
-    }
+        .pricing-table .price-card {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
 
-    .contact-rapide {
-      text-align: center;
-      margin: 20px;
-    }
+        .pricing-table .price-card h3 {
+            margin: 10px 0;
+        }
 
-    .contact-button {
-      background-color: #28a745;
-      color: white;
-      padding: 10px 20px;
-      margin: 10px;
-      border-radius: 5px;
-      text-decoration: none;
-      display: inline-block;
-    }
+        .pricing-table .price-card p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
 
-    .contact-button:hover {
-      background-color: #218838;
-    }
-
-    .map iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-  </style>
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>VTC à Paris - Réservez votre trajet maintenant</h1>
+    </header>
 
-  <!-- Header avec le logo et le titre -->
-  <header>
-    <img src="images/logo.png" alt="Logo VTC Service" class="logo">
-    <h1>VTC Service - Réservez votre trajet maintenant</h1>
-    <p>Disponible à Paris et banlieue. Courses basiques, trajet longue distance possible.</p>
-  </header>
+    <div class="container">
+        <!-- Section Présentation -->
+        <section class="section">
+            <div class="content">
+                <h2>Réservez votre trajet en VTC</h2>
+                <p>Nous vous offrons des trajets rapides et confortables à travers Paris et ses alentours. Que vous partiez de l'aéroport, d'un hôtel ou d'un autre point de la ville, nous sommes là pour vous accompagner.</p>
+                <a href="#reservation" class="cta-button">Réserver maintenant</a>
+            </div>
+            <div class="content">
+                <img src="images/100751i.jpg" alt="Véhicule Toyota Prius VTC Paris">
+            </div>
+        </section>
 
-  <!-- Section des tarifs avec l'image de la voiture -->
-  <section class="tarifs">
-    <div class="card">
-      <img src="images/100751i.jpg" alt="Toyota Prius" class="car-image">
-      <h3>Véhicule utilisé : Toyota Prius</h3>
-      <p>4 places disponibles. Si plus de 2 bagages, 10€ par bagage supplémentaire.</p>
+        <!-- Section Tarifs -->
+        <section class="section">
+            <div class="content">
+                <h2>Nos Tarifs</h2>
+                <p>Découvrez nos tarifs compétitifs pour vos trajets en VTC à Paris.</p>
+                <div class="pricing-table">
+                    <div class="price-card">
+                        <h3>Paris CDG</h3>
+                        <p>55€</p>
+                        <p>Trajet direct vers l'aéroport</p>
+                    </div>
+                    <div class="price-card">
+                        <h3>Paris Disney</h3>
+                        <p>65€</p>
+                        <p>Trajet confortable vers Disneyland</p>
+                    </div>
+                    <div class="price-card">
+                        <h3>Orly Paris</h3>
+                        <p>50€</p>
+                        <p>Transfert rapide vers Orly</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section class="section" id="reservation">
+            <div class="content">
+                <h2>Contactez-moi</h2>
+                <p>Pour toute question ou pour réserver votre trajet, n'hésitez pas à me contacter :</p>
+                <p><strong>Numéro : 06 38 62 06 64</strong></p>
+                <p>Disponible sur Paris et en banlieue. Trajets longs possibles. Bagages supplémentaires (10€ par bagage)</p>
+            </div>
+        </section>
     </div>
-  </section>
 
-  <!-- Section des tarifs -->
-  <section class="tarifs">
-    <div class="card">
-      <h3>Paris CDG</h3>
-      <p>55€</p>
-      <p>Disponible 24h/24</p>
-    </div>
-    <div class="card">
-      <h3>Paris Disney</h3>
-      <p>65€</p>
-      <p>Disponible 24h/24</p>
-    </div>
-    <div class="card">
-      <h3>Paris Orly</h3>
-      <p>50€</p>
-      <p>Disponible 24h/24</p>
-    </div>
-  </section>
-
-  <!-- Formulaire de réservation -->
-  <section class="reservation">
-    <h2>Réservez votre trajet</h2>
-    <form action="#" method="POST">
-      <label for="depart">Lieu de départ :</label>
-      <input type="text" id="depart" name="depart" placeholder="Ex: Paris, Orly...">
-
-      <label for="arrivee">Lieu d'arrivée :</label>
-      <input type="text" id="arrivee" name="arrivee" placeholder="Ex: Paris, Disney...">
-
-      <label for="date">Date et heure :</label>
-      <input type="datetime-local" id="date" name="date">
-
-      <label for="passagers">Nombre de passagers :</label>
-      <input type="number" id="passagers" name="passagers" min="1" max="4" value="1">
-
-      <label for="bagages">Nombre de bagages :</label>
-      <input type="number" id="bagages" name="bagages" min="0" value="0">
-
-      <button type="submit">Réserver</button>
-    </form>
-  </section>
-
-  <!-- Section des avis clients -->
-  <section class="avis">
-    <h2>Ce que disent nos clients</h2>
-    <div class="avis-carte">
-      <p>"Service exceptionnel ! Très ponctuel et agréable." - Client 1</p>
-    </div>
-    <div class="avis-carte">
-      <p>"Voyage très confortable et prix raisonnable." - Client 2</p>
-    </div>
-  </section>
-
-  <!-- Section Google Maps -->
-  <section class="map">
-    <h2>Localisation des trajets</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </section>
-
-  <!-- Section Contact Rapide -->
-  <section class="contact-rapide">
-    <a href="tel:+33638620664" class="contact-button">Appeler maintenant</a>
-    <a href="https://wa.me/33638620664" target="_blank" class="contact-button">Contacter via WhatsApp</a>
-  </section>
-
-  <!-- Footer avec mentions légales et réseaux sociaux -->
-  <footer>
-    <p>&copy; 2025 VTC Service. Tous droits réservés.</p>
-    <a href="https://www.facebook.com/vtcservice" target="_blank">Facebook</a> | 
-    <a href="https://www.instagram.com/vtcservice" target="_blank">Instagram</a> | 
-    <a href="mailto:contact@vtcservice.com">Email</a> | 
-    <a href="/mentions-legales.html">Mentions légales</a> | 
-    <a href="/politique-confidentialite.html">Politique de confidentialité</a>
-  </footer>
-
+    <footer>
+        <p>&copy; 2025 VTC Paris | Tous droits réservés</p>
+    </footer>
 </body>
 </html>
