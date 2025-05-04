@@ -3,223 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Réservez votre VTC à Paris, Disney, CDG, Orly. Transport privé, confortable et rapide. Réservations faciles en ligne.">
-    <meta name="keywords" content="VTC Paris, Taxi Paris, Transport privé Paris, VTC aéroport, transport Disneyland, VTC CDG, transport privé Paris banlieue, réservation VTC Paris">
+    <meta name="description" content="VTC Paris - Transport privé pour tous vos trajets à Paris et en banlieue. Réservation facile et rapide.">
+    <meta name="keywords" content="VTC, transport, Paris, réservation, trajet, véhicule, taxi privé">
     <meta name="author" content="Rayane VTC">
-    <meta name="robots" content="index, follow">
-    <title>Transport Paris - Banlieue | VTC, Transports Aéroport et Privatisation</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Transport Paris - Banlieue</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optionnel : Si tu veux ajouter des styles externes -->
     <style>
-        /* Reset styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Style de base */
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: #f4f4f4;
             color: #333;
-            line-height: 1.6;
         }
-
         header {
-            background: #4CAF50;
-            color: #fff;
-            text-align: center;
-            padding: 30px 0;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-        }
-
-        nav {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-
-        nav ul {
-            list-style: none;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            margin: 40px 10%;
-            background-color: white;
+            background-color: #2e8b57; /* Vert */
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            font-size: 2rem;
-            color: #4CAF50;
-            margin-bottom: 20px;
-        }
-
-        section p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        ul {
-            font-size: 1.1rem;
-            list-style-type: none;
-            padding-left: 0;
-        }
-
-        ul li {
-            margin: 10px 0;
-        }
-
-        .vehicle-image {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        form input, form select, form button {
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 1rem;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        form button {
-            background-color: #4CAF50;
             color: white;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background-color: #45a049;
-        }
-
-        footer {
-            background: #333;
-            color: #fff;
             text-align: center;
-            padding: 15px;
-            position: fixed;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .vehicle-info img {
             width: 100%;
-            bottom: 0;
+            max-width: 400px;
+            display: block;
+            margin: 20px 0;
         }
-
-        footer p {
-            font-size: 1rem;
+        .service-info {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            section {
-                margin: 20px 5%;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
+        .reservation-form {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2e8b57;
+            color: white;
+        }
+        /* Styles pour les boutons et les formulaires */
+        button {
+            background-color: #2e8b57;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #4CAF50;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Transport Paris - Banlieue</h1>
-        <p>Réservez votre VTC à Paris, Disneyland, CDG, Orly, Beauvais et bien plus. Service rapide et sécurisé.</p>
-    </header>
+<header>
+    <h1>Transport Paris - Banlieue</h1>
+    <p>Réservez votre VTC pour un transport privé rapide et fiable à Paris et en banlieue</p>
+</header>
 
-    <nav>
+<div class="container">
+    <!-- Section Voiture -->
+    <div class="vehicle-info">
+        <h2>Véhicule Disponible : Toyota Prius</h2>
+        <img src="https://www.largus.fr/images/styles/max_1300x1300/public/images/100751i.jpg?itok=u-yyEeWS" alt="Toyota Prius">
+        <p>4 places disponibles</p>
+        <p>Bagage : 10€ par bagage si plus de 2</p>
+    </div>
+
+    <!-- Section de Services -->
+    <div class="service-info">
+        <h3>Nos Services</h3>
         <ul>
-            <li><a href="#services">Nos Services</a></li>
-            <li><a href="#reservations">Réservations</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li>Trajet Paris - Orly : 50€</li>
+            <li>Trajet Paris - Disney : 65€</li>
+            <li>Trajet Paris - Beauvais : 170€</li>
+            <li>Trajet Paris - Reims : 350€</li>
         </ul>
-    </nav>
+        <p><strong>Disponibilité :</strong> Disponible sur Paris et en banlieue. Course longue possible. Privatisez-moi pour 40€/h.</p>
+    </div>
 
-    <section id="services">
-        <h2>Nos Services de Transport</h2>
-        <p>Nous proposons un service VTC personnalisé pour vos trajets à Paris et en banlieue. Découvrez nos tarifs :</p>
-        <ul>
-            <li>VTC Paris - Aéroport CDG : 55€</li>
-            <li>VTC Paris - Disneyland : 65€</li>
-            <li>VTC Paris - Orly : 50€</li>
-            <li>VTC Paris - Beauvais : 170€</li>
-            <li>VTC Paris - Reims : 350€</li>
-            <li>Privatisation pour 40€/h</li>
-        </ul>
-        <p><strong>Voiture utilisée : Toyota Prius (4 places disponibles).<br> Bagages payants : 10€ par bagage supplémentaire.</strong></p>
-        <img src="100751i.jpg" alt="Toyota Prius VTC" class="vehicle-image">
-    </section>
-
-    <section id="reservations">
-        <h2>Réservez votre VTC</h2>
-        <p>Pour réserver votre trajet, remplissez le formulaire ci-dessous :</p>
+    <!-- Formulaire de Réservation -->
+    <div class="reservation-form">
+        <h3>Réservez votre trajet</h3>
         <form action="https://formspree.io/f/xzzrenkq" method="POST">
-            <label for="name">Votre nom :</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Votre e-mail :</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone">Numéro de téléphone :</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="location">Lieu de départ :</label>
-            <input type="text" id="location" name="location" required>
-
-            <label for="destination">Destination :</label>
-            <input type="text" id="destination" name="destination" required>
-
-            <label for="departure-time">Heure de départ :</label>
-            <input type="datetime-local" id="departure-time" name="departure-time" required>
-
-            <label for="luggage">Nombre de bagages :</label>
-            <input type="number" id="luggage" name="luggage" min="0" value="0">
-
+            <label for="nom">Nom:</label><br>
+            <input type="text" id="nom" name="nom" required><br><br>
+            
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="trajet">Trajet :</label><br>
+            <select id="trajet" name="trajet" required>
+                <option value="Paris - Orly">Paris - Orly</option>
+                <option value="Paris - Disney">Paris - Disney</option>
+                <option value="Paris - Beauvais">Paris - Beauvais</option>
+                <option value="Paris - Reims">Paris - Reims</option>
+            </select><br><br>
+            
+            <label for="bagages">Nombre de bagages :</label><br>
+            <input type="number" id="bagages" name="bagages" min="0" required><br><br>
+            
+            <label for="horaire">Heure de départ :</label><br>
+            <input type="time" id="horaire" name="horaire" required><br><br>
+            
             <button type="submit">Réserver</button>
         </form>
-    </section>
+    </div>
+</div>
 
-    <section id="contact">
-        <h2>Contactez-Nous</h2>
-        <p>Pour toute question, contactez-nous par e-mail ou téléphone au 06 38 62 06 64. Nous sommes là pour vous aider !</p>
-    </section>
+<div class="footer">
+    <p>&copy; 2025 Transport Paris - Banlieue. Tous droits réservés.</p>
+</div>
 
-    <footer>
-        <p>&copy; 2025 Transport Paris - Banlieue | Tous droits réservés.</p>
-    </footer>
+<!-- Validation Google Search Console -->
+<!-- Télécharge ce fichier à la racine de ton dépôt GitHub -->
+<!-- Google File Validation -->
+<a href="https://rayanevtc-gif.github.io/vtc/googled2de213139dabc9e.html" target="_blank">Vérifier votre site avec Google</a>
 
 </body>
 </html>
