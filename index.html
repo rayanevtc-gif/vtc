@@ -1,235 +1,192 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VTC Paris</title>
-    <style>
-        /* Style global */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rayane VTC Paris</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
 
-        /* Header */
-        header {
-            background-color: #4CAF50;
-            padding: 20px 0;
-            text-align: center;
-            color: white;
-        }
+    header {
+      background-image: url('https://images.unsplash.com/photo-1601315576609-b67c67844b29?auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-        }
+    header h1 {
+      font-size: 48px;
+      background-color: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-        /* Barre de navigation */
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    nav {
+      background-color: #2c3e50;
+      padding: 10px;
+      text-align: center;
+    }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
 
-        nav ul li {
-            margin: 0 20px;
-        }
+    .intro, .notice {
+      text-align: center;
+      margin: 20px 10px;
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
+    .intro {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
 
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
+    .notice {
+      font-size: 16px;
+      color: #777;
+    }
 
-        /* Sections */
-        section {
-            padding: 40px 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            background-color: white;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .tarifs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
 
-        section h2 {
-            font-size: 30px;
-            text-align: center;
-            color: #333;
-        }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
 
-        /* Contact */
-        #contact p {
-            font-size: 18px;
-            text-align: center;
-        }
+    .card h3 {
+      color: #007bff;
+    }
 
-        /* Formulaire de réservation */
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    .form-section {
+      background-color: white;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-        form label {
-            font-size: 18px;
-            display: block;
-            margin-bottom: 8px;
-        }
+    label, input, select {
+      display: block;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 16px;
+    }
 
-        form input, form select, form button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
+    input, select {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
 
-        form button {
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-        }
+    button {
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 16px;
+    }
 
-        form button:hover {
-            background-color: #45a049;
-        }
+    button:hover {
+      background-color: #0056b3;
+    }
 
-        /* Footer */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            section {
-                padding: 20px;
-            }
-        }
-    </style>
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>VTC Paris</h1>
-        <p>Votre chauffeur privé à Paris et environs</p>
-    </header>
+<header>
+  <h1>Rayane VTC Paris</h1>
+</header>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#tarifs">Tarifs</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#reservation">Réservation</a></li>
-        </ul>
-    </nav>
+<nav>
+  <a href="#tarifs">Tarifs</a>
+  <a href="#reservation">Réserver</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <!-- Section Services -->
-    <section id="services">
-        <h2>Nos Services</h2>
-        <div style="display: flex; justify-content: center; gap: 20px;">
-            <div style="width: 300px; text-align: center; padding: 20px; background-color: #e9f7e9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <h3>Transport Aéroport</h3>
-                <p>VTC privé pour Paris CDG, Orly et autres aéroports</p>
-            </div>
-            <div style="width: 300px; text-align: center; padding: 20px; background-color: #e9f7e9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                <h3>Transfert Disneyland</h3>
-                <p>Trajet direct vers Disneyland Paris en confort et sécurité</p>
-            </div>
-        </div>
-    </section>
+<p class="intro">
+  Disponible sur Paris et banlieue – Trajets longues distances possibles – 📞 06 38 62 06 64
+</p>
+<p class="notice">
+  Service simple et accessible – Véhicule classique, pas de prestation haut de gamme
+</p>
 
-    <!-- Section Tarifs -->
-    <section id="tarifs">
-        <h2>Nos Tarifs</h2>
-        <ul style="list-style-type: none; padding: 0; text-align: center;">
-            <li><strong>Paris CDG :</strong> 55 €</li>
-            <li><strong>Paris Disneyland :</strong> 65 €</li>
-            <li><strong>Paris Orly :</strong> 50 €</li>
-        </ul>
-    </section>
+<section id="tarifs" class="tarifs">
+  <div class="card">
+    <h3>Paris ➜ CDG</h3>
+    <p>55€</p>
+  </div>
+  <div class="card">
+    <h3>Paris ➜ Disneyland</h3>
+    <p>65€</p>
+  </div>
+  <div class="card">
+    <h3>Orly ➜ Paris</h3>
+    <p>50€</p>
+  </div>
+</section>
 
-    <!-- Section Contact -->
-    <section id="contact">
-        <h2>Contactez-nous</h2>
-        <p>Vous pouvez nous joindre par téléphone au :</p>
-        <p style="font-size: 24px; font-weight: bold; color: #4CAF50;">06 38 62 06 64</p>
-        <p>Nous sommes disponibles pour des trajets dans la région de Paris.</p>
-    </section>
+<section id="reservation" class="form-section">
+  <h2 style="text-align:center; color:#2c3e50;">Réserver un trajet</h2>
+  <form>
+    <label for="trajet">Choisissez un trajet :</label>
+    <select id="trajet" name="trajet">
+      <option value="cdg">Paris ➜ CDG</option>
+      <option value="disney">Paris ➜ Disneyland</option>
+      <option value="orly">Orly ➜ Paris</option>
+    </select>
 
-    <!-- Section Réservation -->
-    <section id="reservation">
-        <h2>Réservez votre trajet</h2>
-        <form id="reservationForm" action="#" method="post">
-            <label for="destination">Destination :</label>
-            <select name="destination" id="destination">
-                <option value="paris_cdg">Paris CDG</option>
-                <option value="paris_disney">Paris Disneyland</option>
-                <option value="paris_orly">Paris Orly</option>
-            </select>
+    <label for="horaire">Choisissez un horaire :</label>
+    <input type="datetime-local" id="horaire" name="horaire" />
 
-            <label for="date">Date de départ :</label>
-            <input type="date" name="date" id="date" required>
+    <button type="submit">Envoyer la demande</button>
+  </form>
+</section>
 
-            <label for="time">Heure de départ :</label>
-            <input type="time" name="time" id="time" required>
+<section id="contact" class="form-section">
+  <h2 style="text-align:center; color:#2c3e50;">Contact</h2>
+  <p style="text-align:center">Pour toute information ou réservation directe :</p>
+  <p style="text-align:center; font-size:18px; font-weight:bold; color:#007bff;">06 38 62 06 64</p>
+</section>
 
-            <button type="submit">Réserver</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 VTC Paris. Tous droits réservés.</p>
-    </footer>
-
-    <script>
-        // Simple confirmation for form submission
-        document.getElementById("reservationForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const destination = document.getElementById("destination").value;
-            const date = document.getElementById("date").value;
-            const time = document.getElementById("time").value;
-            alert(`Votre réservation a bien été prise en compte !\n\nDestination: ${destination}\nDate: ${date}\nHeure: ${time}`);
-        });
-    </script>
+<footer>
+  <p>&copy; 2025 Rayane VTC – Tous droits réservés</p>
+</footer>
 
 </body>
 </html>
