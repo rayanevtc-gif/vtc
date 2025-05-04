@@ -1,177 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transport Paris Banlieue VTC - Réservation Chauffeur Privé</title>
-  <meta name="description" content="Transport Paris Banlieue VTC - Réservez votre chauffeur privé vers CDG, Orly, Disneyland, Beauvais, Reims. Trajets simples ou mise à disposition 40€/h.">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-    }
-
-    header {
-      background-color: #2ecc71;
-      color: white;
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 1rem;
-    }
-
-    .hero {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .hero img {
-      max-width: 300px;
-      width: 100%;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .info, .tarifs, .reservation, .footer {
-      margin: 2rem 0;
-      background: white;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #27ae60;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
-    }
-
-    form {
-      display: grid;
-      gap: 1rem;
-    }
-
-    input, select {
-      padding: 0.6rem;
-      font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      background-color: #27ae60;
-      color: white;
-      padding: 0.7rem;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #219150;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #777;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 1rem;
-      }
-
-      header h1 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Paris - Banlieue</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #34b08f;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #34b08f;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2a8f68;
+        }
+        img.vehicle {
+            width: 100%;
+            max-width: 400px;
+            display: block;
+            margin: 20px auto;
+        }
+        .service-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .service-info div {
+            width: 48%;
+        }
+    </style>
 </head>
 <body>
-
-  <header>
-    <h1>Transport Paris Banlieue VTC</h1>
-    <p>📞 06 38 62 06 64 – Disponible sur Paris, banlieue & longues distances</p>
-  </header>
-
-  <div class="container">
-
-    <div class="hero">
-      <img src="100751i.jpg" alt="Toyota Prius VTC Paris">
-      <p>Véhicule : Toyota Prius – 4 places disponibles. Bagage supplémentaire : +10€ au-delà de 2.</p>
-    </div>
-
-    <div class="info">
-      <h2>Services proposés</h2>
-      <ul>
-        <li>✅ Trajets aéroports : CDG, Orly, Beauvais</li>
-        <li>✅ Disneyland Paris & Reims</li>
-        <li>✅ Mise à disposition : 40€/heure</li>
-        <li>✅ Véhicule simple, confort de base</li>
-      </ul>
-    </div>
-
-    <div class="tarifs">
-      <h2>Tarifs fixes</h2>
-      <ul>
-        <li>Paris → CDG : 55 €</li>
-        <li>Paris → Orly : 50 €</li>
-        <li>Paris → Disneyland : 65 €</li>
-        <li>Paris → Beauvais : 170 €</li>
-        <li>Paris → Reims : 350 €</li>
-      </ul>
-    </div>
-
-    <div class="reservation">
-      <h2>Réserver un trajet</h2>
-      <form>
-        <label>Nom complet : <input type="text" required></label>
-        <label>Nombre de passagers : <input type="number" min="1" max="4" required></label>
-        <label>Nombre de bagages : <input type="number" min="0" required></label>
-        <label>Trajet souhaité :
-          <select required>
-            <option value="">-- Choisir --</option>
-            <option>Paris → CDG</option>
-            <option>Paris → Orly</option>
-            <option>Paris → Disneyland</option>
-            <option>Paris → Beauvais</option>
-            <option>Paris → Reims</option>
-            <option>Mise à disposition (40€/h)</option>
-          </select>
-        </label>
-        <label>Horaire de départ : <input type="datetime-local" required></label>
-        <label>Téléphone : <input type="tel" required></label>
-        <button type="submit">Envoyer la réservation</button>
-      </form>
-    </div>
-
-    <div class="footer">
-      &copy; 2025 Transport Paris Banlieue VTC – Tous droits réservés.
-    </div>
-
-  </div>
-
+    <header>
+        <h1>Transport Paris - Banlieue</h1>
+        <p>VTC à votre service pour des trajets sur Paris, la banlieue et au-delà</p>
+    </header>
+    <main>
+        <img src="100751i.jpg" alt="Toyota Prius VTC Paris" class="vehicle">
+        
+        <div class="service-info">
+            <div>
+                <h2>Nos trajets</h2>
+                <ul>
+                    <li>Paris → CDG : 55€</li>
+                    <li>Paris → Disneyland : 65€</li>
+                    <li>Paris → Orly : 50€</li>
+                    <li>Paris → Beauvais : 170€</li>
+                    <li>Paris → Reims : 350€</li>
+                    <li>Mise à disposition (40€/h) pour Paris et banlieue</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Réservez votre trajet</h2>
+                <form action="https://formspree.io/f/xzzrenkq" method="POST">
+                    <label>Nom complet : <input type="text" name="nom" required></label>
+                    <label>Nombre de passagers : <input type="number" name="passagers" min="1" max="4" required></label>
+                    <label>Nombre de bagages : <input type="number" name="bagages" min="0" required></label>
+                    <label>Trajet souhaité :
+                        <select name="trajet" required>
+                            <option value="">-- Choisir --</option>
+                            <option value="Paris → CDG">Paris → CDG</option>
+                            <option value="Paris → Orly">Paris → Orly</option>
+                            <option value="Paris → Disneyland">Paris → Disneyland</option>
+                            <option value="Paris → Beauvais">Paris → Beauvais</option>
+                            <option value="Paris → Reims">Paris → Reims</option>
+                            <option value="Mise à disposition (40€/h)">Mise à disposition (40€/h)</option>
+                        </select>
+                    </label>
+                    <label>Horaire de départ : <input type="datetime-local" name="horaire" required></label>
+                    <label>Téléphone : <input type="tel" name="tel" required></label>
+                    <button type="submit">Envoyer la réservation</button>
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
