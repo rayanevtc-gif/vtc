@@ -22,22 +22,11 @@
             color: white;
             text-align: center;
             padding: 20px 0;
-            animation: fadeIn 2s ease-out;
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
-        }
-
-        /* Fade In Animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         .container {
@@ -66,18 +55,6 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            animation: slideIn 1.5s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
         }
 
         .section img {
@@ -96,16 +73,6 @@
         .section .content h2 {
             font-size: 2.5em;
             margin-bottom: 20px;
-            animation: fadeIn 2s ease-out;
-        }
-
-        .section .content p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        .section .content a {
-            font-size: 1.2em;
         }
 
         .pricing-table {
@@ -138,6 +105,35 @@
         .pricing-table .price-card p {
             font-size: 1.2em;
             margin: 10px 0;
+        }
+
+        .form-section {
+            background-color: #e9f7e8;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-section input, .form-section select, .form-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-section button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-section button:hover {
+            background-color: #45a049;
         }
 
         footer {
@@ -206,14 +202,40 @@
             </div>
         </section>
 
-        <!-- Section Contact / Réservation (ID correspond à #reservation pour que le lien fonctionne) -->
-        <section class="section" id="reservation">
-            <div class="content">
-                <h2>Contactez-moi</h2>
-                <p>Pour toute question ou pour réserver votre trajet, n'hésitez pas à me contacter :</p>
-                <p><strong>Numéro : 06 38 62 06 64</strong></p>
-                <p>Disponible sur Paris et en banlieue. Trajets longs possibles. Bagages supplémentaires (10€ par bagage)</p>
-            </div>
+        <!-- Section Réservation -->
+        <section class="form-section" id="reservation">
+            <h2>Réservez votre trajet</h2>
+            <form>
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+                <label for="pickup">Point de départ</label>
+                <input type="text" id="pickup" name="pickup" placeholder="Où souhaitez-vous être pris en charge ?" required>
+
+                <label for="destination">Destination</label>
+                <input type="text" id="destination" name="destination" placeholder="Où souhaitez-vous aller ?" required>
+
+                <label for="bags">Nombre de bagages</label>
+                <select id="bags" name="bags">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
+                <label for="date">Horaire souhaité</label>
+                <input type="datetime-local" id="date" name="date" required>
+
+                <label for="additional">Commentaires supplémentaires</label>
+                <textarea id="additional" name="additional" rows="4" placeholder="Indiquez si vous avez des demandes particulières..."></textarea>
+
+                <button type="submit">Réserver maintenant</button>
+            </form>
         </section>
     </div>
 
