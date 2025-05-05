@@ -13,7 +13,8 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      background: url('https://s1.1zoom.me/b8048/487/Sky_Evening_France_Eiffel_Tower_Paris_From_above_520603_1920x1080.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
       line-height: 1.6;
     }
@@ -23,6 +24,8 @@
       justify-content: space-between;
       padding: 2rem;
       gap: 2rem;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
     }
 
     .content {
@@ -75,7 +78,7 @@
 
     .vehicle {
       text-align: center;
-      max-width: 200px;
+      max-width: 180px;
     }
 
     .vehicle img {
@@ -107,6 +110,40 @@
       padding: 0.6rem;
       border-radius: 5px;
     }
+
+    .destinations, .reviews {
+      background: #ffffff;
+      padding: 2rem;
+      margin: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .destinations h2, .reviews h2 {
+      margin-bottom: 1rem;
+    }
+
+    .destinations ul {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+    }
+
+    .destinations li {
+      margin-bottom: 0.5rem;
+    }
+
+    .review {
+      margin-bottom: 1rem;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-left: 4px solid #00bfff;
+    }
+
+    .review strong {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
   </style>
 </head>
 <body>
@@ -134,6 +171,43 @@
         <p>Nos véhicules sont équipés pour assurer un confort optimal, que ce soit pour les familles, les professionnels ou les touristes. Nous proposons des services de navette vers les aéroports (CDG, Orly, Beauvais), les gares (Montparnasse, Gare du Nord, etc.), et les lieux touristiques comme Disneyland ou le Château de Versailles.</p>
         <p>Des sièges enfants sont disponibles gratuitement pour assurer la sécurité de vos enfants. Réservez dès maintenant pour un trajet sans stress, avec des tarifs fixes et transparents.</p>
       </div>
+
+      <div class="destinations">
+        <h2>Nos principales destinations</h2>
+        <ul>
+          <li>VTC Van Aéroport de Paris Charles-de-Gaulle (CDG)</li>
+          <li>VTC Van Aéroport de Paris Orly</li>
+          <li>VTC Van Aéroport de Paris Bourget</li>
+          <li>VTC Van Aéroport de Vatry</li>
+          <li>VTC Van Aéroport de Paris Beauvais</li>
+          <li>VTC Van Gare Montparnasse</li>
+          <li>VTC Van Gare de Bercy</li>
+          <li>VTC Van Gare du Nord</li>
+          <li>VTC Van Gare de Lyon</li>
+          <li>VTC Van Gare d’Austerlitz</li>
+          <li>VTC Van Gare de l’Est</li>
+          <li>VTC Van Gare Saint-Lazare</li>
+          <li>VTC Van Gare de Massy TGV</li>
+          <li>VTC Van Gare de Disney Chessy TGV</li>
+        </ul>
+      </div>
+
+      <div class="reviews">
+        <h2>Avis clients</h2>
+        <div class="review">
+          <strong>Jean M.</strong>
+          "Service impeccable, chauffeur ponctuel et très aimable. Je recommande vivement !"
+        </div>
+        <div class="review">
+          <strong>Claire D.</strong>
+          "Voiture propre, confort parfait, et un excellent accueil. Réservation facile et rapide."
+        </div>
+        <div class="review">
+          <strong>Ahmed T.</strong>
+          "J’ai voyagé avec mes enfants, les sièges étaient installés comme demandé. Très pro."
+        </div>
+      </div>
+
     </div>
 
     <div class="form-box">
