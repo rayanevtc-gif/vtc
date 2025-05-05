@@ -1,137 +1,119 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="VTC Paris - Transport privé pour tous vos trajets à Paris et en banlieue. Réservation facile et rapide.">
-    <meta name="keywords" content="VTC, transport, Paris, réservation, trajet, véhicule, taxi privé">
-    <meta name="author" content="Rayane VTC">
-    <title>Transport Paris - Banlieue</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optionnel : Si tu veux ajouter des styles externes -->
-    <style>
-        /* Style de base */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #2e8b57; /* Vert */
-            padding: 20px;
-            color: white;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-        }
-        .vehicle-info img {
-            width: 100%;
-            max-width: 400px;
-            display: block;
-            margin: 20px 0;
-        }
-        .service-info {
-            background-color: #fff;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .reservation-form {
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #2e8b57;
-            color: white;
-        }
-        /* Styles pour les boutons et les formulaires */
-        button {
-            background-color: #2e8b57;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #4CAF50;
-        }
-    </style>
-</head>
-<body>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<header>
-    <h1>Transport Paris - Banlieue</h1>
-    <p>Réservez votre VTC pour un transport privé rapide et fiable à Paris et en banlieue</p>
-</header>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
 
-<div class="container">
-    <!-- Section Voiture -->
-    <div class="vehicle-info">
-        <h2>Véhicule Disponible : Toyota Prius</h2>
-        <img src="https://www.largus.fr/images/styles/max_1300x1300/public/images/100751i.jpg?itok=u-yyEeWS" alt="Toyota Prius">
-        <p>4 places disponibles</p>
-        <p>Bagage : 10€ par bagage si plus de 2</p>
-    </div>
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
 
-    <!-- Section de Services -->
-    <div class="service-info">
-        <h3>Nos Services</h3>
-        <ul>
-            <li>Trajet Paris - Orly : 50€</li>
-            <li>Trajet Paris - Disney : 65€</li>
-            <li>Trajet Paris - Beauvais : 170€</li>
-            <li>Trajet Paris - Reims : 350€</li>
-        </ul>
-        <p><strong>Disponibilité :</strong> Disponible sur Paris et en banlieue. Course longue possible. Privatisez-moi pour 40€/h.</p>
-    </div>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
 
-    <!-- Formulaire de Réservation -->
-    <div class="reservation-form">
-        <h3>Réservez votre trajet</h3>
-        <form action="https://formspree.io/f/xzzrenkq" method="POST">
-            <label for="nom">Nom:</label><br>
-            <input type="text" id="nom" name="nom" required><br><br>
-            
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            
-            <label for="trajet">Trajet :</label><br>
-            <select id="trajet" name="trajet" required>
-                <option value="Paris - Orly">Paris - Orly</option>
-                <option value="Paris - Disney">Paris - Disney</option>
-                <option value="Paris - Beauvais">Paris - Beauvais</option>
-                <option value="Paris - Reims">Paris - Reims</option>
-            </select><br><br>
-            
-            <label for="bagages">Nombre de bagages :</label><br>
-            <input type="number" id="bagages" name="bagages" min="0" required><br><br>
-            
-            <label for="horaire">Heure de départ :</label><br>
-            <input type="time" id="horaire" name="horaire" required><br><br>
-            
-            <button type="submit">Réserver</button>
-        </form>
-    </div>
-</div>
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+}
 
-<div class="footer">
-    <p>&copy; 2025 Transport Paris - Banlieue. Tous droits réservés.</p>
-</div>
+#hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
 
-<!-- Validation Google Search Console -->
-<!-- Télécharge ce fichier à la racine de ton dépôt GitHub -->
-<!-- Google File Validation -->
-<a href="https://rayanevtc-gif.github.io/vtc/googled2de213139dabc9e.html" target="_blank">Vérifier votre site avec Google</a>
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
 
-</body>
-</html>
+#hero p {
+    font-size: 1.2rem;
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color: #d55a4a;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #b4463a;
+}
+
+#services {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.service-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.service-item {
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+#reservation, #contact {
+    padding: 40px 20px;
+    background-color: #fff;
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form select, form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #444;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
