@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="navbar">
             <div class="logo">
@@ -23,14 +24,17 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="hero">
         <div class="hero-container">
             <h1>Rayane VTC - Transport privé à Aulnay-sous-Bois</h1>
             <p>Eco, Prestige, Van - Chauffeurs professionnels à votre service.</p>
+            <p>Réservez votre transport au : <strong>06 38 62 06 64</strong></p>
             <a href="#reservation" class="cta-button">Réservez votre transport</a>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services">
         <div class="services-container">
             <h2>Nos Services</h2>
@@ -49,6 +53,7 @@
         </div>
     </section>
 
+    <!-- Reservation Section -->
     <section id="reservation">
         <h2>Réservez Votre Transport</h2>
         <form action="https://formspree.io/f/xzzrenkq" method="POST">
@@ -59,7 +64,7 @@
             <input type="email" id="email" name="email" required>
 
             <label for="phone">Téléphone</label>
-            <input type="text" id="phone" name="phone" required>
+            <input type="text" id="phone" name="phone" value="06 38 62 06 64" readonly required>
 
             <label for="date">Date et Heure</label>
             <input type="datetime-local" id="date" name="date" required>
@@ -78,6 +83,14 @@
         </form>
     </section>
 
+    <!-- Image Section -->
+    <section class="image-section">
+        <h2>Votre trajet, notre priorité</h2>
+        <!-- Remplace 'ton-image.jpg' par l'URL de ton image -->
+        <img src="ChatGPT Image 5 mai 2025, 12_43_00" alt="VTC Aulnay-sous-Bois" class="image-vtc">
+    </section>
+
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contactez-nous</h2>
         <form action="https://formspree.io/f/xzzrenkq" method="POST">
@@ -94,6 +107,7 @@
         </form>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Rayane VTC - Tous droits réservés | <a href="mailto:contact@rayane-vtc.com">contact@rayane-vtc.com</a></p>
     </footer>
