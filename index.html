@@ -1,159 +1,109 @@
-<div class="reservation-container">
-  <div class="reservation-sidebar">
-    <h3>Réservez votre Transport</h3>
-    <form action="/reservation" method="post">
-      
-      <!-- Lieu de départ -->
-      <div class="form-group">
-        <label for="departure">Lieu de départ</label>
-        <input type="text" id="departure" name="departure" placeholder="Entrez votre lieu de départ" required>
-      </div>
-      
-      <!-- Destination -->
-      <div class="form-group">
-        <label for="destination">Destination</label>
-        <input type="text" id="destination" name="destination" placeholder="Entrez votre destination" required>
-      </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Réserver une course - Transport VTC</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
 
-      <!-- Date et heure -->
-      <div class="form-group">
-        <label for="date">Date et heure</label>
-        <input type="datetime-local" id="date" name="date" required>
-      </div>
-      
-      <!-- Nombre de passagers -->
-      <div class="form-group">
-        <label for="passengers">Nombre de passagers</label>
-        <input type="number" id="passengers" name="passengers" min="1" max="8" required>
-      </div>
+    .reservation-box {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      width: 320px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      padding: 20px;
+      z-index: 1000;
+    }
 
-      <!-- Choix du véhicule -->
-      <div class="form-group">
-        <label for="vehicle">Choisissez un véhicule</label>
-        <select id="vehicle" name="vehicle" required>
-          <option value="van">Van</option>
-          <option value="prestige">Prestige</option>
-        </select>
-      </div>
-      
-      <!-- Numéro de téléphone -->
-      <div class="form-group">
-        <label for="phone">Numéro de téléphone</label>
-        <input type="text" id="phone" name="phone" value="06 38 62 06 64" readonly>
-      </div>
-      
-      <!-- Bouton de réservation -->
-      <button type="submit" class="submit-btn">Réserver maintenant</button>
+    .reservation-box h2 {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .reservation-box form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .reservation-box input,
+    .reservation-box select {
+      padding: 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .reservation-box button {
+      padding: 12px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .reservation-box button:hover {
+      background-color: #333;
+    }
+
+    .whatsapp-button {
+      display: block;
+      margin-top: 15px;
+      text-align: center;
+      padding: 10px;
+      background-color: #25D366;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .reservation-box {
+        position: static;
+        margin: 20px auto;
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="reservation-box">
+    <h2>Réserver une course</h2>
+    <form action="https://formspree.io/f/xzzrenkq" method="POST">
+      <input type="text" name="name" placeholder="Nom complet" required />
+      <input type="tel" name="phone" placeholder="Téléphone" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="text" name="departure" placeholder="Adresse de départ" required />
+      <input type="text" name="destination" placeholder="Adresse d’arrivée" required />
+      <input type="datetime-local" name="datetime" placeholder="Date et heure" required />
+      <select name="vehicule" required>
+        <option value="">Choisissez un véhicule</option>
+        <option value="berline">Berline</option>
+        <option value="van">Van</option>
+        <option value="prestige">Prestige</option>
+      </select>
+      <button type="submit">Envoyer</button>
     </form>
 
-    <!-- Bouton WhatsApp -->
-    <a href="https://wa.me/33638620664" target="_blank" class="whatsapp-btn">
-      📱 Contactez-moi sur WhatsApp
+    <a class="whatsapp-button" href="https://wa.me/33638620664" target="_blank">
+      📲 Contact via WhatsApp
     </a>
   </div>
-</div>
 
-<style>
-  .reservation-container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 320px;
-    height: 100%;
-    background-color: #f9f9f9;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-    border-left: 2px solid #ddd;
-  }
-
-  .reservation-sidebar {
-    width: 100%;
-    padding: 20px;
-    overflow-y: auto;
-  }
-
-  h3 {
-    text-align: center;
-    color: #333;
-    font-size: 1.5em;
-    margin-bottom: 15px;
-  }
-
-  .form-group {
-    margin-bottom: 15px;
-  }
-
-  .form-group label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    display: block;
-  }
-
-  .form-group input,
-  .form-group select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 1em;
-    margin-bottom: 10px;
-  }
-
-  .form-group input[readonly] {
-    background-color: #f0f0f0;
-    cursor: not-allowed;
-  }
-
-  .submit-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-  }
-
-  .submit-btn:hover {
-    background-color: #0056b3;
-  }
-
-  .whatsapp-btn {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #25D366;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-
-  .whatsapp-btn:hover {
-    background-color: #1da851;
-  }
-
-  @media (max-width: 600px) {
-    .reservation-container {
-      width: 100%;
-      position: static;
-      box-shadow: none;
-      border-left: none;
-    }
-
-    .reservation-sidebar {
-      padding: 15px;
-    }
-
-    .submit-btn,
-    .whatsapp-btn {
-      font-size: 1em;
-    }
-  }
-</style>
+</body>
+</html>
