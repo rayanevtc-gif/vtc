@@ -3,189 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Réserver une course - Transport VTC</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f7f7f7;
-    }
-
-    header {
-      background-color: #000;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .intro {
-      margin-bottom: 40px;
-    }
-
-    .intro h1 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .intro p {
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .service {
-      flex: 1 1 300px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    }
-
-    .service h3 {
-      margin-top: 0;
-    }
-
-    .reservation-box {
-      position: fixed;
-      top: 80px;
-      right: 20px;
-      width: 320px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      padding: 20px;
-      z-index: 1000;
-    }
-
-    .reservation-box h2 {
-      text-align: center;
-      font-size: 18px;
-      margin-bottom: 15px;
-      color: #333;
-    }
-
-    .reservation-box form {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .reservation-box input,
-    .reservation-box select {
-      padding: 10px;
-      margin-bottom: 12px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .reservation-box button {
-      padding: 12px;
-      background-color: #000;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .reservation-box button:hover {
-      background-color: #333;
-    }
-
-    .whatsapp-button {
-      display: block;
-      margin-top: 15px;
-      text-align: center;
-      padding: 10px;
-      background-color: #25D366;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-    }
-
-    @media (max-width: 768px) {
-      .reservation-box {
-        position: static;
-        margin: 20px auto;
-        width: 90%;
-      }
-
-      .services {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <title>Transport VTC</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header>
-    <h1>Transport VTC - Réservez votre course</h1>
-  </header>
+  <div class="background"></div>
 
-  <div class="content">
-    <section class="intro">
-      <h1>Bienvenue chez votre spécialiste du transport de groupes</h1>
-      <p>
-        Pour tous vos trajets entre amis, en famille ou pour les groupes de professionnels, comptez sur nos services VTC ! Plutôt que de multiplier les réservations, faire plusieurs groupes ou encore prendre plusieurs voitures, effectuez votre réservation VTC Van ou minibus avec nous, le spécialiste du transport de groupes en Île-de-France.
-      </p>
-    </section>
-
-    <section class="services">
-      <div class="service">
-        <h3>Transferts aéroports et gares</h3>
-        <p>
-          Nous assurons vos trajets vers ou depuis les principaux aéroports et gares de la région parisienne. Votre chauffeur privé surveille les horaires d’arrivée et vous attend jusqu’à 45 minutes sans frais.
-        </p>
-      </div>
-      <div class="service">
-        <h3>Mise à disposition</h3>
-        <p>
-          Profitez d’un véhicule avec chauffeur privé à votre disposition pour une heure, une journée ou plusieurs jours, en fonction de vos besoins. Idéal pour les événements, les visites touristiques ou les déplacements professionnels.
-        </p>
-      </div>
-      <div class="service">
-        <h3>Longue distance</h3>
-        <p>
-          Envie de quitter Paris ? Organisez un week-end ou une excursion en province ou en Europe. Nous vous conduisons où vous le souhaitez depuis Paris et la région parisienne.
-        </p>
+  <div class="main-content">
+    <section class="vehicles">
+      <h2>Nos Véhicules</h2>
+      <div class="vehicle-list">
+        <div class="vehicle">
+          <img src="https://cdn.pixabay.com/photo/2020/05/04/09/07/toyota-5128016_1280.jpg" alt="Éco">
+          <h3>Éco</h3>
+        </div>
+        <div class="vehicle">
+          <img src="https://cdn.pixabay.com/photo/2015/01/19/13/51/limo-604694_1280.jpg" alt="Van">
+          <h3>Van</h3>
+        </div>
+        <div class="vehicle">
+          <img src="https://cdn.pixabay.com/photo/2017/01/06/19/15/auto-1957037_1280.jpg" alt="Prestige">
+          <h3>Prestige</h3>
+        </div>
       </div>
     </section>
-  </div>
 
-  <div class="reservation-box">
-    <h2>Réserver une course</h2>
-    <form action="https://formspree.io/f/xzzrenkq" method="POST">
-      <input type="text" name="name" placeholder="Nom complet" required />
-      <input type="tel" name="phone" placeholder="Téléphone" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="text" name="departure" placeholder="Adresse de départ" required />
-      <input type="text" name="destination" placeholder="Adresse d’arrivée" required />
-      <input type="datetime-local" name="datetime" required />
-      <select name="vehicule" required>
-        <option value="">Choisissez un véhicule</option>
-        <option value="berline">Berline</option>
-        <option value="van">Van</option>
-        <option value="prestige">Prestige</option>
-      </select>
-      <button type="submit">Envoyer</button>
-    </form>
+    <div class="booking-form">
+      <h2>Réserver une course</h2>
+      <form action="https://formspree.io/f/xzzrenkq" method="POST">
+        <label for="name">Nom complet</label>
+        <input type="text" id="name" name="name" required>
 
-    <a class="whatsapp-button" href="https://wa.me/33638620664" target="_blank">
-      📲 Contact via WhatsApp
-    </a>
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="pickup">Adresse de départ</label>
+        <input type="text" id="pickup" name="pickup" required>
+
+        <label for="dropoff">Adresse d’arrivée</label>
+        <input type="text" id="dropoff" name="dropoff" required>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Heure</label>
+        <input type="time" id="time" name="time" required>
+
+        <button type="submit">Réserver</button>
+      </form>
+
+      <a href="https://wa.me/33638620664" target="_blank" class="whatsapp-button">📱 Contact WhatsApp</a>
+    </div>
   </div>
 
 </body>
