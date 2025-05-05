@@ -1,119 +1,102 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VTC Rayane - Service de transport privé à Aulnay-sous-Bois. Eco, Prestige, Van.">
+    <title>VTC Rayane - Aulnay-sous-Bois</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Rayane VTC</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Nos Services</a></li>
+                    <li><a href="#reservation">Réservation</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-}
+    <section id="hero">
+        <div class="hero-container">
+            <h1>Votre transport privé à Aulnay-sous-Bois</h1>
+            <p>Transport Eco, Prestige, Van - Chauffeurs professionnels à votre service.</p>
+            <a href="#reservation" class="cta-button">Réservez dès maintenant</a>
+        </div>
+    </section>
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-}
+    <section id="services">
+        <h2>Nos Services</h2>
+        <div class="services-wrapper">
+            <div class="service-item">
+                <h3>Eco</h3>
+                <p>Un service de transport économique et rapide pour vos déplacements quotidiens.</p>
+            </div>
+            <div class="service-item">
+                <h3>Prestige</h3>
+                <p>Un service haut de gamme pour vos déplacements professionnels ou événements spéciaux.</p>
+            </div>
+            <div class="service-item">
+                <h3>Van</h3>
+                <p>Idéal pour les groupes, avec un véhicule spacieux et confortable pour tous vos trajets.</p>
+            </div>
+        </div>
+    </section>
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 20px;
-}
+    <section id="reservation">
+        <h2>Réservez votre VTC</h2>
+        <form action="mailto:contact@rayane-vtc.com" method="POST">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
 
-.navbar a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-}
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 
-#hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
-    color: white;
-    padding: 80px 20px;
-    text-align: center;
-}
+            <label for="phone">Téléphone</label>
+            <input type="text" id="phone" name="phone" required>
 
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
+            <label for="date">Date et Heure</label>
+            <input type="datetime-local" id="date" name="date" required>
 
-#hero p {
-    font-size: 1.2rem;
-}
+            <label for="destination">Destination</label>
+            <input type="text" id="destination" name="destination" required>
 
-.cta-button {
-    padding: 15px 30px;
-    background-color: #d55a4a;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    border-radius: 5px;
-    margin-top: 20px;
-}
+            <label for="service">Choisir un Service</label>
+            <select id="service" name="service" required>
+                <option value="eco">Eco</option>
+                <option value="prestige">Prestige</option>
+                <option value="van">Van</option>
+            </select>
 
-.cta-button:hover {
-    background-color: #b4463a;
-}
+            <button type="submit">Réserver</button>
+        </form>
+    </section>
 
-#services {
-    padding: 60px 20px;
-    background-color: #fff;
-    text-align: center;
-}
+    <section id="contact">
+        <h2>Contactez-nous</h2>
+        <form action="mailto:contact@rayane-vtc.com" method="POST">
+            <label for="contact-name">Nom</label>
+            <input type="text" id="contact-name" name="contact-name" required>
 
-.service-container {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="contact-email" required>
 
-.service-item {
-    width: 30%;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
 
-.service-item:hover {
-    transform: scale(1.05);
-}
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
 
-#reservation, #contact {
-    padding: 40px 20px;
-    background-color: #fff;
-    margin-top: 20px;
-}
+    <footer>
+        <p>&copy; 2025 Rayane VTC - Tous droits réservés | <a href="mailto:contact@rayane-vtc.com">contact@rayane-vtc.com</a></p>
+    </footer>
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form input, form select, form textarea {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #444;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-}
+</body>
+</html>
