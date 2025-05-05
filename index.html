@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transport Parisien - Réservation VTC</title>
+  <title>Transport Privé à Paris - Réservation VTC</title>
   <style>
     * {
       box-sizing: border-box;
@@ -27,7 +27,7 @@
       gap: 2rem;
       background-color: rgba(255, 255, 255, 0.85);
       border-radius: 10px;
-      z-index: 2; /* Assurer que le contenu soit au-dessus de l'image */
+      z-index: 2;
     }
 
     .content {
@@ -37,7 +37,7 @@
     .form-box {
       position: absolute;
       top: 2rem;
-      left: 2rem;
+      right: 2rem;
       background: #2d2d2d;
       color: white;
       padding: 1.5rem;
@@ -79,21 +79,22 @@
 
     .vehicles {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
+      gap: 1.5rem;
       margin-top: 2rem;
     }
 
     .vehicle {
       text-align: center;
-      max-width: 200px;
+      width: 120px; /* Taille des images des véhicules */
     }
 
     .vehicle img {
       width: 100%;
       height: auto;
       border-radius: 10px;
+      max-width: 120px;
     }
 
     .vehicle h3 {
@@ -166,6 +167,8 @@
         top: initial;
         left: initial;
         right: initial;
+        margin-top: 1rem;
+        padding: 1.2rem;
       }
 
       .vehicles {
@@ -174,7 +177,8 @@
       }
 
       .vehicle {
-        max-width: 100%;
+        width: 100%;
+        max-width: 200px;
       }
     }
 
@@ -219,11 +223,15 @@
       <div class="vehicles">
         <div class="vehicle">
           <h3>Éco</h3>
-          <img src="https://www.ilyane-vtc.fr/images/voiture-vtc-paris/voiture-vtc-peugeot-508.jpg" alt="Eco">
+          <img src="https://coopvtc.com/wp-content/uploads/2017/11/voiture-eco.jpg" alt="Eco">
         </div>
         <div class="vehicle">
           <h3>Prestige</h3>
-          <img src="https://luxurycab-paris.com/wp-content/uploads/2023/04/location-de-voiture-avec-chauffeur-1024x589.jpg" alt="Prestige">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.UKaDoNAfRE2TpEohCT0X3AHaEW?w=295&h=180&c=7&r=0&o=5&pid=1.7" alt="Prestige">
+        </div>
+        <div class="vehicle">
+          <h3>Van</h3>
+          <img src="https://montransport.com/local/provider_slideshow/3810/7255/58219f06e71ff0.70534794.jpg" alt="Van">
         </div>
       </div>
 
@@ -272,39 +280,28 @@
     </div>
 
     <div class="form-box">
-      <h2>Tarif fixe et immédiat</h2>
-      <p>Réservation minimum 15 minutes avant sinon contactez-nous au <strong>06 38 62 06 64</strong> pour un trajet immédiat.</p>
-      <form action="https://formspree.io/f/xzzrenkq" method="POST">
-        <label>Adresse de départ</label>
-        <input type="text" name="depart" placeholder="Adresse de départ" required>
+      <h2>Réservation Rapide</h2>
+      <p>Réservez maintenant votre trajet avec un tarif fixe. Pour toute urgence, contactez-nous au <strong>06 38 62 06 64</strong>.</p>
+      <form action="https://formspree.io/f/xpzgkvyy" method="POST">
+        <label for="from">Départ</label>
+        <input type="text" id="from" name="from" required />
 
-        <label>Adresse d'arrivée</label>
-        <input type="text" name="arrivee" placeholder="Adresse d'arrivée" required>
+        <label for="to">Destination</label>
+        <input type="text" id="to" name="to" required />
 
-        <label>Durée</label>
-        <select name="duree">
-          <option value="1h">1 Heure</option>
-          <option value="2h">2 Heures</option>
-          <option value="3h">3 Heures</option>
-          <option value="4h">4 Heures</option>
-        </select>
-
-        <label>Date de prise en charge</label>
-        <input type="date" name="date" required>
-
-        <label>Heure de prise en charge</label>
-        <input type="time" name="heure" required>
-
-        <label>Choix de véhicule</label>
-        <select name="vehicule">
+        <label for="vehicle">Véhicule</label>
+        <select id="vehicle" name="vehicle" required>
           <option value="eco">Éco</option>
           <option value="prestige">Prestige</option>
+          <option value="van">Van</option>
         </select>
 
-        <button type="submit">Valider</button>
-      </form>
+        <label for="date">Date et Heure</label>
+        <input type="datetime-local" id="date" name="date" required />
 
-      <a class="whatsapp-link" href="https://wa.me/33638620664" target="_blank">Contacter via WhatsApp</a>
+        <button type="submit">Réserver</button>
+      </form>
+      <a href="https://wa.me/33638620664" class="whatsapp-link">Réservez via WhatsApp</a>
     </div>
   </div>
 </body>
