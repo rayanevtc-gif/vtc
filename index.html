@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Transport privé à Aulnay-sous-Bois. Eco, Prestige, Van."/>
-  <title>Transport Privé - Aulnay-sous-Bois</title>
+  <meta name="description" content="Transport de groupes en Île-de-France avec Rayane VTC. Confort et sécurité garantis pour vos événements et déplacements. Réservez en ligne." />
+  <title>Transport de Groupes à Aulnay-sous-Bois - Rayane VTC</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
+      margin: 0;
       background-color: #f8f8f8;
     }
 
     header {
-      background: #000;
+      background-color: #000;
       color: #fff;
       padding: 10px 20px;
     }
@@ -38,11 +38,11 @@
     }
 
     #hero {
-      position: relative;
       background: url('https://s1.1zoom.me/b8048/487/Sky_Evening_France_Eiffel_Tower_Paris_From_above_520603_1920x1080.jpg') no-repeat center center/cover;
       color: white;
       text-align: center;
       padding: 100px 20px;
+      position: relative;
     }
 
     #hero::before {
@@ -79,9 +79,26 @@
       margin-bottom: 30px;
     }
 
-    h2 {
+    h2, h3 {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
+    }
+
+    .service-description {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .gallery img {
+      width: 32%;
+      border-radius: 8px;
     }
 
     form {
@@ -106,47 +123,20 @@
       font-size: 16px;
     }
 
-    .service {
-      margin-bottom: 40px;
-    }
-
-    .service img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-
     footer {
       background: #222;
       color: white;
       text-align: center;
       padding: 20px;
     }
-
-    @media (min-width: 768px) {
-      .service-flex {
-        display: flex;
-        align-items: center;
-        gap: 30px;
-      }
-
-      .service-flex .text {
-        flex: 1;
-      }
-
-      .service-flex .image {
-        flex: 1;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="navbar">
       <div class="logo">
-        <a href="#">Transport Privé</a>
+        <a href="#">Rayane VTC</a>
       </div>
       <nav>
         <ul>
@@ -161,40 +151,33 @@
   <!-- Hero Section -->
   <section id="hero">
     <div class="hero-container">
-      <h1>Transport Privé à Aulnay-sous-Bois</h1>
-      <p>Eco, Prestige, Van – Chauffeur professionnel disponible 24h/24</p>
-      <a href="#reservation" class="cta-button">Réservez votre trajet</a>
+      <h1>Transport de Groupes à Aulnay-sous-Bois et Île-de-France</h1>
+      <p>Des véhicules spacieux et confortables pour tous vos déplacements en groupe. Parfait pour vos événements, séminaires, et navettes.</p>
+      <a href="#reservation" class="cta-button">Réservez votre transport</a>
     </div>
   </section>
 
-  <!-- Services -->
+  <!-- Description -->
   <section id="services">
-    <h2>Nos Services</h2>
-
-    <div class="service service-flex">
-      <div class="text">
-        <h3>Service Eco</h3>
-        <p>Transport économique pour vos trajets quotidiens, rapide et confortable.</p>
-      </div>
-      <div class="image">
-        <img src="ChatGPT Image 5 mai 2025, 12_43_00.jpg" alt="Véhicule Rayane VTC">
-      </div>
+    <h2>Pourquoi Choisir Rayane VTC pour le Transport de Groupes ?</h2>
+    <div class="service-description">
+      <p>Nous mettons à votre disposition une flotte de véhicules spacieux, adaptés à tous vos déplacements en groupe. Que ce soit pour un séminaire, une excursion ou un transfert vers l’aéroport, nous vous garantissons un service de qualité, confortable et sécurisé.</p>
     </div>
+  </section>
 
-    <div class="service">
-      <h3>Service Prestige</h3>
-      <p>Déplacements haut de gamme pour vos rendez-vous professionnels et événements.</p>
-    </div>
-
-    <div class="service">
-      <h3>Service Van</h3>
-      <p>Solution idéale pour les groupes ou les familles, avec confort et espace garanti.</p>
+  <!-- Galerie -->
+  <section id="gallery">
+    <h2>Nos Véhicules</h2>
+    <div class="gallery">
+      <img src="ChatGPT Image 5 mai 2025, 12_43_00.jpg" alt="Véhicule Rayane VTC">
+      <img src="https://via.placeholder.com/350x200" alt="Véhicule spacieux">
+      <img src="https://via.placeholder.com/350x200" alt="Van Rayane VTC">
     </div>
   </section>
 
   <!-- Réservation -->
   <section id="reservation">
-    <h2>Réservez Votre Trajet</h2>
+    <h2>Réservez Votre Transport de Groupe</h2>
     <form action="https://formspree.io/f/xzzrenkq" method="POST">
       <label for="name">Nom</label>
       <input type="text" id="name" name="name" required>
@@ -211,7 +194,7 @@
       <label for="destination">Destination</label>
       <input type="text" id="destination" name="destination" required>
 
-      <label for="service">Service</label>
+      <label for="service">Choisissez un Service</label>
       <select id="service" name="service" required>
         <option value="eco">Eco</option>
         <option value="prestige">Prestige</option>
@@ -225,7 +208,6 @@
   <!-- Contact -->
   <section id="contact">
     <h2>Contactez-nous</h2>
-    <p style="text-align: center;">Par téléphone : <strong>06 38 62 06 64</strong><br>ou via ce formulaire :</p>
     <form action="https://formspree.io/f/xzzrenkq" method="POST">
       <label for="contact-name">Nom</label>
       <input type="text" id="contact-name" name="contact-name" required>
@@ -242,7 +224,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Rayane VTC – Tous droits réservés</p>
+    <p>&copy; 2025 Rayane VTC – Tous droits réservés | <a href="mailto:contact@rayane-vtc.com" style="color: white;">contact@rayane-vtc.com</a></p>
   </footer>
 
 </body>
