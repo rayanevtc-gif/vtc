@@ -1,209 +1,129 @@
-/* Réinitialisation des styles de base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Corps de la page */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+body, html {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Header */
-header {
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.background {
+  background-image: url('https://s1.1zoom.me/b8048/487/Sky_Evening_France_Eiffel_Tower_Paris_From_above_520603_1920x1080.jpg');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  filter: brightness(0.7);
 }
 
-header .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    margin: 0 auto;
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-header .navbar a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    margin-right: 20px;
-    transition: color 0.3s ease;
+.vehicles {
+  flex: 1 1 55%;
+  color: white;
 }
 
-header .navbar a:hover {
-    color: #d55a4a;
+.vehicles h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-/* Section Hero */
-#hero {
-    background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+.vehicle-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-#hero h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 10px;
+.vehicle {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  width: 30%;
+  color: #fff;
+  backdrop-filter: blur(4px);
 }
 
-#hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+.vehicle img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
-.cta-button {
-    background-color: #d55a4a;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.vehicle h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
 }
 
-.cta-button:hover {
-    background-color: #b4463a;
+.booking-form {
+  flex: 1 1 35%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
 }
 
-/* Section Services */
-#services {
-    padding: 80px 20px;
-    background-color: #fff;
-    text-align: center;
+.booking-form h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
 }
 
-#services h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    font-weight: 600;
-    color: #333;
+.booking-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
-.services-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+.booking-form input,
+.booking-form button {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.service {
-    background-color: #f8f8f8;
-    padding: 30px;
-    margin: 15px;
-    border-radius: 8px;
-    width: 30%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.booking-form button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
 }
 
-.service:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+.booking-form button:hover {
+  background-color: #444;
 }
 
-.service h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #333;
+.whatsapp-button {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: #25D366;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.service p {
-    font-size: 1rem;
-    color: #666;
+.whatsapp-button:hover {
+  background-color: #1ebe5b;
 }
 
-/* Section Réservation */
-#reservation {
-    padding: 60px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
+@media screen and (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
 
-#reservation h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-form input, form select, form textarea {
+  .vehicle {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-form input[type="datetime-local"] {
-    padding: 10px;
-}
-
-form button {
-    width: 100%;
-    padding: 15px;
-    background-color: #2c3e50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #1a252f;
-}
-
-/* Section Contact */
-#contact {
-    padding: 60px 20px;
-    background-color: #fff;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-form textarea {
-    height: 150px;
-}
-
-/* Footer */
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-footer a {
-    color: #d55a4a;
-    text-decoration: none;
-}
-
-footer a:hover {
-    color: #fff;
+  }
 }
