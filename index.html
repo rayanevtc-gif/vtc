@@ -273,4 +273,39 @@
 
     <div class="form-box">
       <h2>Tarif fixe et immédiat</h2>
-      <p>Réservation minimum 15 minutes avant sinon
+      <p>Réservation minimum 15 minutes avant sinon contactez-nous au <strong>06 38 62 06 64</strong> pour un trajet immédiat.</p>
+      <form action="https://formspree.io/f/xzzrenkq" method="POST">
+        <label>Adresse de départ</label>
+        <input type="text" name="depart" placeholder="Adresse de départ" required>
+
+        <label>Adresse d'arrivée</label>
+        <input type="text" name="arrivee" placeholder="Adresse d'arrivée" required>
+
+        <label>Durée</label>
+        <select name="duree">
+          <option value="1h">1 Heure</option>
+          <option value="2h">2 Heures</option>
+          <option value="3h">3 Heures</option>
+          <option value="4h">4 Heures</option>
+        </select>
+
+        <label>Date de prise en charge</label>
+        <input type="date" name="date" required>
+
+        <label>Heure de prise en charge</label>
+        <input type="time" name="heure" required>
+
+        <label>Choix de véhicule</label>
+        <select name="vehicule">
+          <option value="eco">Éco</option>
+          <option value="prestige">Prestige</option>
+        </select>
+
+        <button type="submit">Valider</button>
+      </form>
+
+      <a class="whatsapp-link" href="https://wa.me/33638620664" target="_blank">Contacter via WhatsApp</a>
+    </div>
+  </div>
+</body>
+</html>
