@@ -87,6 +87,14 @@
             margin-bottom: 10px;
         }
 
+        .vehicle-description {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #f5f5f5;
+            line-height: 1.6;
+            padding: 0 20px;
+        }
+
         /* Footer */
         .footer {
             background-color: #333;
@@ -103,6 +111,19 @@
 
         .footer a:hover {
             text-decoration: underline;
+        }
+
+        /* Small images under each vehicle */
+        .vehicle-images img {
+            width: 90%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .vehicle-images {
+            margin-top: 10px;
+            text-align: center;
         }
     </style>
 </head>
@@ -143,17 +164,32 @@
             <!-- Vehicle categories -->
             <div class="vehicle-category">
                 <h2>Prestige</h2>
-                <img src="https://luxurycab-paris.com/wp-content/uploads/2023/04/location-de-voiture-avec-chauffeur-1024x589.jpg" alt="Prestige">
+                <div class="vehicle-images">
+                    <img src="https://luxurycab-paris.com/wp-content/uploads/2023/04/location-de-voiture-avec-chauffeur-1024x589.jpg" alt="Prestige">
+                </div>
+                <div class="vehicle-description">
+                    <p>Offrez-vous une expérience de luxe à Paris avec nos véhicules Prestige. Parfait pour vos événements, transferts privés, ou simplement pour voyager dans le confort et l'élégance.</p>
+                </div>
             </div>
 
             <div class="vehicle-category">
                 <h2>Van</h2>
-                <img src="https://taxivtcparis.fr/wp-content/uploads/2022/01/van--1024x555.png" alt="Van">
+                <div class="vehicle-images">
+                    <img src="https://taxivtcparis.fr/wp-content/uploads/2022/01/van--1024x555.png" alt="Van">
+                </div>
+                <div class="vehicle-description">
+                    <p>Voyagez en groupe ou avec votre famille dans nos vans spacieux et confortables. Idéal pour vos trajets en groupe à travers Paris ou les aéroports.</p>
+                </div>
             </div>
 
             <div class="vehicle-category">
                 <h2>Éco</h2>
-                <img src="https://www.ilyane-vtc.fr/images/voiture-vtc-paris/voiture-vtc-peugeot-508.jpg" alt="Éco">
+                <div class="vehicle-images">
+                    <img src="https://www.ilyane-vtc.fr/images/voiture-vtc-paris/voiture-vtc-peugeot-508.jpg" alt="Éco">
+                </div>
+                <div class="vehicle-description">
+                    <p>Pour un transport économique et efficace, nos véhicules Éco vous offrent un service de qualité tout en respectant votre budget. Parfait pour les trajets quotidiens ou les visites touristiques à Paris.</p>
+                </div>
             </div>
         </div>
     </div>
