@@ -21,24 +21,24 @@
 
     .container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-direction: column;
       padding: 2rem;
       gap: 2rem;
-      background-color: rgba(255, 255, 255, 0.95);
+      background-color: rgba(255, 255, 255, 0.85);
       border-radius: 10px;
+      z-index: 2; /* Assurer que le contenu soit au-dessus de l'image */
     }
 
     .content {
-      flex: 2;
+      flex: 1;
     }
 
     .form-box {
-      flex: 1;
       background: #2d2d2d;
       color: white;
       padding: 1.5rem;
       border-radius: 10px;
+      z-index: 3;
     }
 
     .form-box h2 {
@@ -73,15 +73,15 @@
 
     .vehicles {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
       margin-top: 2rem;
-      flex-wrap: wrap;
     }
 
     .vehicle {
       text-align: center;
-      margin: 1rem;
-      max-width: 220px; /* Augmenter la taille des véhicules Éco */
+      max-width: 200px;
     }
 
     .vehicle img {
@@ -95,16 +95,12 @@
       color: #222;
     }
 
-    .vehicle van {
-      max-width: 150px; /* Réduire la taille de la section Van */
-    }
-
     .description {
-      margin: 3rem 2rem 2rem;
+      margin: 3rem 0 2rem;
       background: #fff;
       padding: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .whatsapp-link {
@@ -121,9 +117,9 @@
     .destinations, .reviews {
       background: #ffffff;
       padding: 2rem;
-      margin: 2rem;
+      margin: 2rem 0;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     .destinations h2, .reviews h2 {
@@ -152,15 +148,37 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Pour améliorer la visibilité du numéro de téléphone */
-    a.tel-link {
-      font-weight: bold;
-      color: #007BFF;
-      text-decoration: none;
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+
+      .form-box {
+        padding: 1rem;
+      }
+
+      .vehicles {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .vehicle {
+        max-width: 100%;
+      }
     }
 
-    a.tel-link:hover {
-      text-decoration: underline;
+    @media (max-width: 480px) {
+      .form-box {
+        padding: 0.8rem;
+      }
+
+      button {
+        padding: 0.6rem;
+      }
+
+      .whatsapp-link {
+        padding: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -169,6 +187,7 @@
     <div class="content">
       <h1>Transport Privé à Paris et Île-de-France</h1>
       <p>Profitez d'un service de transport VTC fiable, confortable et adapté à vos besoins. Nos chauffeurs expérimentés sont à votre disposition pour tout type de trajet, avec des véhicules de qualité : Eco, Prestige, et Van.</p>
+
       <div class="vehicles">
         <div class="vehicle">
           <h3>Éco</h3>
@@ -177,10 +196,6 @@
         <div class="vehicle">
           <h3>Prestige</h3>
           <img src="https://luxurycab-paris.com/wp-content/uploads/2023/04/location-de-voiture-avec-chauffeur-1024x589.jpg" alt="Prestige">
-        </div>
-        <div class="vehicle">
-          <h3>Van</h3>
-          <img src="https://taxivtcparis.fr/wp-content/uploads/2022/01/van--1024x555.png" alt="Van">
         </div>
       </div>
 
@@ -193,20 +208,20 @@
       <div class="destinations">
         <h2>Nos principales destinations</h2>
         <ul>
-          <li>VTC Van Aéroport de Paris Charles-de-Gaulle (CDG)</li>
-          <li>VTC Van Aéroport de Paris Orly</li>
-          <li>VTC Van Aéroport de Paris Bourget</li>
-          <li>VTC Van Aéroport de Vatry</li>
-          <li>VTC Van Aéroport de Paris Beauvais</li>
-          <li>VTC Van Gare Montparnasse</li>
-          <li>VTC Van Gare de Bercy</li>
-          <li>VTC Van Gare du Nord</li>
-          <li>VTC Van Gare de Lyon</li>
-          <li>VTC Van Gare d’Austerlitz</li>
-          <li>VTC Van Gare de l’Est</li>
-          <li>VTC Van Gare Saint-Lazare</li>
-          <li>VTC Van Gare de Massy TGV</li>
-          <li>VTC Van Gare de Disney Chessy TGV</li>
+          <li>Aéroport de Paris Charles-de-Gaulle (CDG)</li>
+          <li>Aéroport de Paris Orly</li>
+          <li>Aéroport de Paris Bourget</li>
+          <li>Aéroport de Vatry</li>
+          <li>Aéroport de Paris Beauvais</li>
+          <li>Gare Montparnasse</li>
+          <li>Gare de Bercy</li>
+          <li>Gare du Nord</li>
+          <li>Gare de Lyon</li>
+          <li>Gare d’Austerlitz</li>
+          <li>Gare de l’Est</li>
+          <li>Gare Saint-Lazare</li>
+          <li>Gare de Massy TGV</li>
+          <li>Gare de Disney Chessy TGV</li>
         </ul>
       </div>
 
@@ -230,7 +245,7 @@
 
     <div class="form-box">
       <h2>Tarif fixe et immédiat</h2>
-      <p>Réservation minimum 15 minutes avant sinon contactez-nous au <a href="tel:+33638620664" class="tel-link"><strong>06 38 62 06 64</strong></a> pour un trajet immédiat.</p>
+      <p>Réservation minimum 15 minutes avant sinon contactez-nous au <strong>06 38 62 06 64</strong> pour un trajet immédiat.</p>
       <form action="https://formspree.io/f/xzzrenkq" method="POST">
         <label>Adresse de départ</label>
         <input type="text" name="depart" placeholder="Adresse de départ" required>
@@ -256,7 +271,6 @@
         <select name="vehicule">
           <option value="eco">Éco</option>
           <option value="prestige">Prestige</option>
-          <option value="van">Van</option>
         </select>
 
         <button type="submit">Valider</button>
