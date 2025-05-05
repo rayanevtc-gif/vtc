@@ -1,36 +1,50 @@
+/* Réinitialisation des styles de base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Corps de la page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
     color: #333;
 }
 
+/* Header */
 header {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 20px;
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.navbar {
+header .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+    margin: 0 auto;
 }
 
-.navbar a {
-    color: white;
+header .navbar a {
+    color: #fff;
     text-decoration: none;
-    padding: 10px;
+    font-size: 18px;
+    margin-right: 20px;
+    transition: color 0.3s ease;
 }
 
+header .navbar a:hover {
+    color: #d55a4a;
+}
+
+/* Section Hero */
 #hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
-    height: 400px;
+    background: url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,20 +52,21 @@ header {
     color: white;
 }
 
-.hero-container h1 {
-    font-size: 3rem;
+#hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
-.hero-container p {
+#hero p {
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
 .cta-button {
-    padding: 15px 30px;
     background-color: #d55a4a;
     color: white;
+    padding: 15px 30px;
     text-decoration: none;
     font-size: 1.2rem;
     border-radius: 5px;
@@ -62,73 +77,126 @@ header {
     background-color: #b4463a;
 }
 
+/* Section Services */
 #services {
-    padding: 60px 20px;
+    padding: 80px 20px;
     background-color: #fff;
     text-align: center;
 }
 
 #services h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 600;
+    color: #333;
 }
 
-.services-wrapper {
+.services-container {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.service-item {
+.service {
+    background-color: #f8f8f8;
+    padding: 30px;
+    margin: 15px;
+    border-radius: 8px;
     width: 30%;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-item:hover {
+.service:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-#reservation, #contact {
+.service h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Section Réservation */
+#reservation {
     padding: 60px 20px;
-    background-color: #fff;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+#reservation h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 form input, form select, form textarea {
-    margin: 10px 0;
-    padding: 10px;
     width: 100%;
-    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1rem;
+}
+
+form input[type="datetime-local"] {
+    padding: 10px;
 }
 
 form button {
-    padding: 15px 30px;
-    background-color: #333;
+    width: 100%;
+    padding: 15px;
+    background-color: #2c3e50;
     color: white;
     border: none;
-    cursor: pointer;
     border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #444;
+    background-color: #1a252f;
 }
 
-footer {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 20px;
+/* Section Contact */
+#contact {
+    padding: 60px 20px;
+    background-color: #fff;
     text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+form textarea {
+    height: 150px;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
 footer a {
@@ -136,3 +204,6 @@ footer a {
     text-decoration: none;
 }
 
+footer a:hover {
+    color: #fff;
+}
