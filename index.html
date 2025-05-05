@@ -1,316 +1,159 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Transport de groupes en Île-de-France, service de navette, séminaires, événements, transfert aéroport, et plus." />
-  <title>Transport de Groupes à Aulnay-sous-Bois</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
+<div class="reservation-container">
+  <div class="reservation-sidebar">
+    <h3>Réservez votre Transport</h3>
+    <form action="/reservation" method="post">
+      
+      <!-- Lieu de départ -->
+      <div class="form-group">
+        <label for="departure">Lieu de départ</label>
+        <input type="text" id="departure" name="departure" placeholder="Entrez votre lieu de départ" required>
+      </div>
+      
+      <!-- Destination -->
+      <div class="form-group">
+        <label for="destination">Destination</label>
+        <input type="text" id="destination" name="destination" placeholder="Entrez votre destination" required>
+      </div>
 
-    header {
-      background-color: #1d1d1d;
-      color: white;
-      padding: 15px 20px;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 999;
-    }
+      <!-- Date et heure -->
+      <div class="form-group">
+        <label for="date">Date et heure</label>
+        <input type="datetime-local" id="date" name="date" required>
+      </div>
+      
+      <!-- Nombre de passagers -->
+      <div class="form-group">
+        <label for="passengers">Nombre de passagers</label>
+        <input type="number" id="passengers" name="passengers" min="1" max="8" required>
+      </div>
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+      <!-- Choix du véhicule -->
+      <div class="form-group">
+        <label for="vehicle">Choisissez un véhicule</label>
+        <select id="vehicle" name="vehicle" required>
+          <option value="van">Van</option>
+          <option value="prestige">Prestige</option>
+        </select>
+      </div>
+      
+      <!-- Numéro de téléphone -->
+      <div class="form-group">
+        <label for="phone">Numéro de téléphone</label>
+        <input type="text" id="phone" name="phone" value="06 38 62 06 64" readonly>
+      </div>
+      
+      <!-- Bouton de réservation -->
+      <button type="submit" class="submit-btn">Réserver maintenant</button>
+    </form>
 
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .cta-button {
-      background-color: #28a745;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    #hero {
-      background: url('https://s1.1zoom.me/b8048/487/Sky_Evening_France_Eiffel_Tower_Paris_From_above_520603_1920x1080.jpg') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      padding: 120px 20px;
-      position: relative;
-    }
-
-    #hero::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
-    }
-
-    .hero-container {
-      position: relative;
-      z-index: 2;
-    }
-
-    section {
-      padding: 60px 20px;
-      background-color: white;
-      margin: 30px 0;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-container, .service-box {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .service-box {
-      background-color: #f8f8f8;
-      border-radius: 8px;
-      padding: 20px;
-      width: 30%;
-      text-align: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .service-box img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .service-box h3 {
-      margin-top: 15px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-
-    .cta-section {
-      background-color: #28a745;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-      margin-top: 40px;
-    }
-
-    .cta-section h2 {
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
-
-    .cta-section p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    footer {
-      background-color: #1d1d1d;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .contact-info {
-      margin-top: 20px;
-    }
-
-    .contact-info p {
-      margin: 5px 0;
-    }
-
-    .form-group input, .form-group select, .form-group textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-    }
-
-    .form-group button {
-      background-color: #007bff;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .form-group button:hover {
-      background-color: #0056b3;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <div class="navbar">
-    <div class="logo">
-      <a href="#">Transport</a>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#services">Nos Services</a></li>
-        <li><a href="#reservation">Réservation</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- Bouton WhatsApp -->
+    <a href="https://wa.me/33638620664" target="_blank" class="whatsapp-btn">
+      📱 Contactez-moi sur WhatsApp
+    </a>
   </div>
-</header>
+</div>
 
-<!-- Hero Section -->
-<section id="hero">
-  <div class="hero-container">
-    <h1>Votre Transport de Groupe à Aulnay-sous-Bois</h1>
-    <p>Véhicules spacieux, confortables et professionnels pour tous vos déplacements.</p>
-    <a href="#reservation" class="cta-button">Réservez votre transport</a>
-  </div>
-</section>
+<style>
+  .reservation-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background-color: #f9f9f9;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    border-left: 2px solid #ddd;
+  }
 
-<!-- Services Section -->
-<section id="services">
-  <h2>Nos Services</h2>
-  <div class="service-container">
-    <div class="service-box">
-      <img src="https://via.placeholder.com/300x200" alt="Service Eco">
-      <h3>Service Eco</h3>
-      <p>Un transport économique pour vos trajets quotidiens, confortable et rapide.</p>
-    </div>
-    <div class="service-box">
-      <img src="https://via.placeholder.com/300x200" alt="Service Prestige">
-      <h3>Service Prestige</h3>
-      <p>Chauffeurs professionnels pour vos événements ou déplacements haut de gamme.</p>
-    </div>
-    <div class="service-box">
-      <img src="https://via.placeholder.com/300x200" alt="Service Van">
-      <h3>Service Van</h3>
-      <p>Transport de groupe avec un véhicule spacieux et tout confort.</p>
-    </div>
-  </div>
-</section>
+  .reservation-sidebar {
+    width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+  }
 
-<!-- Gallery Section -->
-<section id="gallery">
-  <h2>Nos Véhicules</h2>
-  <div class="gallery">
-    <img src="ChatGPT Image 5 mai 2025, 12_43_00.jpg" alt="Véhicule Transport">
-    <img src="https://via.placeholder.com/600x400" alt="Véhicule spacieux">
-    <img src="https://via.placeholder.com/600x400" alt="Van pour groupes">
-  </div>
-</section>
+  h3 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
 
-<!-- Call to Action Section -->
-<section class="cta-section">
-  <h2>Vous Avez Besoin d'un Transport de Groupe ?</h2>
-  <p>Réservez dès maintenant un de nos véhicules et bénéficiez d'un service professionnel, à la hauteur de vos attentes.</p>
-  <a href="#reservation" class="cta-button">Réserver Maintenant</a>
-</section>
+  .form-group {
+    margin-bottom: 15px;
+  }
 
-<!-- Reservation Section -->
-<section id="reservation">
-  <h2>Réservez Votre Transport</h2>
-  <form action="https://formspree.io/f/xzzrenkq" method="POST">
-    <div class="form-group">
-      <label for="name">Nom</label>
-      <input type="text" id="name" name="name" required>
-    </div>
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-    </div>
-    <div class="form-group">
-      <label for="phone">Téléphone</label>
-      <input type="text" id="phone" name="phone" required placeholder="Votre numéro de téléphone">
-    </div>
-    <div class="form-group">
-      <label for="date">Date et Heure</label>
-      <input type="datetime-local" id="date" name="date" required>
-    </div>
-    <div class="form-group">
-      <label for="destination">Destination</label>
-      <input type="text" id="destination" name="destination" required>
-    </div>
-    <div class="form-group">
-      <label for="service">Choisissez un Service</label>
-      <select id="service" name="service" required>
-        <option value="eco">Eco</option>
-        <option value="prestige">Prestige</option>
-        <option value="van">Van</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <button type="submit">Réserver</button>
-    </div>
-  </form>
-</section>
+  .form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
 
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contactez-nous</h2>
-  <p>Vous pouvez nous joindre directement via le formulaire ci-dessous ou par téléphone.</p>
-  <form action="https://formspree.io/f/xzzrenkq" method="POST">
-    <div class="form-group">
-      <label for="contact-name">Nom</label>
-      <input type="text" id="contact-name" name="contact-name" required>
-    </div>
-    <div class="form-group">
-      <label for="contact-email">Email</label>
-      <input type="email" id="contact-email" name="contact-email" required>
-    </div>
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" required></textarea>
-    </div>
-    <div class="form-group">
-      <button type="submit">Envoyer</button>
-    </div>
-  </form>
-</section>
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Transport – Tous droits réservés</p>
-  <div class="contact-info">
-    <p>Email : <a href="mailto:contact@transport.com">contact@transport.com</a></p>
-    <p>Tel : 06 38 62 06 64</p>
-  </div>
-</footer>
+  .form-group input[readonly] {
+    background-color: #f0f0f0;
+    cursor: not-allowed;
+  }
 
-</body>
-</html>
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .whatsapp-btn {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #25D366;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .whatsapp-btn:hover {
+    background-color: #1da851;
+  }
+
+  @media (max-width: 600px) {
+    .reservation-container {
+      width: 100%;
+      position: static;
+      box-shadow: none;
+      border-left: none;
+    }
+
+    .reservation-sidebar {
+      padding: 15px;
+    }
+
+    .submit-btn,
+    .whatsapp-btn {
+      font-size: 1em;
+    }
+  }
+</style>
