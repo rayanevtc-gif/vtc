@@ -6,10 +6,55 @@
   <title>Réserver une course - Transport VTC</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f7f7f7;
+    }
+
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .intro {
+      margin-bottom: 40px;
+    }
+
+    .intro h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .service {
+      flex: 1 1 300px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .service h3 {
+      margin-top: 0;
     }
 
     .reservation-box {
@@ -77,10 +122,48 @@
         margin: 20px auto;
         width: 90%;
       }
+
+      .services {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
+
+  <header>
+    <h1>Transport VTC - Réservez votre course</h1>
+  </header>
+
+  <div class="content">
+    <section class="intro">
+      <h1>Bienvenue chez votre spécialiste du transport de groupes</h1>
+      <p>
+        Pour tous vos trajets entre amis, en famille ou pour les groupes de professionnels, comptez sur nos services VTC ! Plutôt que de multiplier les réservations, faire plusieurs groupes ou encore prendre plusieurs voitures, effectuez votre réservation VTC Van ou minibus avec nous, le spécialiste du transport de groupes en Île-de-France.
+      </p>
+    </section>
+
+    <section class="services">
+      <div class="service">
+        <h3>Transferts aéroports et gares</h3>
+        <p>
+          Nous assurons vos trajets vers ou depuis les principaux aéroports et gares de la région parisienne. Votre chauffeur privé surveille les horaires d’arrivée et vous attend jusqu’à 45 minutes sans frais.
+        </p>
+      </div>
+      <div class="service">
+        <h3>Mise à disposition</h3>
+        <p>
+          Profitez d’un véhicule avec chauffeur privé à votre disposition pour une heure, une journée ou plusieurs jours, en fonction de vos besoins. Idéal pour les événements, les visites touristiques ou les déplacements professionnels.
+        </p>
+      </div>
+      <div class="service">
+        <h3>Longue distance</h3>
+        <p>
+          Envie de quitter Paris ? Organisez un week-end ou une excursion en province ou en Europe. Nous vous conduisons où vous le souhaitez depuis Paris et la région parisienne.
+        </p>
+      </div>
+    </section>
+  </div>
 
   <div class="reservation-box">
     <h2>Réserver une course</h2>
@@ -90,7 +173,7 @@
       <input type="email" name="email" placeholder="Email" required />
       <input type="text" name="departure" placeholder="Adresse de départ" required />
       <input type="text" name="destination" placeholder="Adresse d’arrivée" required />
-      <input type="datetime-local" name="datetime" placeholder="Date et heure" required />
+      <input type="datetime-local" name="datetime" required />
       <select name="vehicule" required>
         <option value="">Choisissez un véhicule</option>
         <option value="berline">Berline</option>
