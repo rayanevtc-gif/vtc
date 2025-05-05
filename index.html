@@ -3,192 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservation VTC</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .container {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* Sidebar (formulaire de réservation à droite) */
-        .sidebar {
-            width: 320px;
-            background-color: #333;
-            padding: 20px;
-            color: #fff;
-        }
-
-        .sidebar h2 {
-            text-align: center;
-        }
-
-        .sidebar .form-group {
-            margin-bottom: 15px;
-        }
-
-        .sidebar select, .sidebar input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-
-        .sidebar button {
-            width: 100%;
-            padding: 15px;
-            background-color: #f56c42;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .sidebar button:hover {
-            background-color: #e14e34;
-        }
-
-        .sidebar .whatsapp a {
-            width: 100%;
-            background-color: #25d366;
-            padding: 15px;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        /* Main content */
-        .content {
-            flex-grow: 1;
-            padding: 20px;
-        }
-
-        .vehicle-category {
-            margin-bottom: 30px;
-        }
-
-        .vehicle-category img {
-            width: 100%;
-            height: auto;
-            max-width: 300px; /* Taille réduite des images */
-            margin-bottom: 10px;
-            border-radius: 5px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .vehicle-category p {
-            font-size: 16px;
-            color: #333;
-            text-align: center;
-        }
-
-        .description {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .description h3 {
-            font-size: 22px;
-            color: #f56c42;
-        }
-
-        .description p {
-            font-size: 16px;
-            color: #333;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
+    <title>VTC Paris - Réservation en ligne</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- Section principale avec image de fond -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>VTC Paris</h1>
+        <p>Réservez votre trajet en toute simplicité, où que vous soyez à Paris et en Île-de-France.</p>
+    </div>
+</section>
+
+<!-- Section de réservation avec le formulaire à droite -->
+<section class="reservation">
     <div class="container">
-        <!-- Sidebar for booking -->
-        <div class="sidebar">
-            <h2>Réservation</h2>
-            <div class="form-group">
-                <label for="destination">Destination</label>
-                <select id="destination">
-                    <option value="Paris">Paris</option>
-                    <option value="Aéroport Charles de Gaulle">Aéroport Charles de Gaulle</option>
-                    <option value="Aéroport Orly">Aéroport Orly</option>
-                </select>
+        <div class="reservation-content">
+            <!-- Formulaire de réservation à droite -->
+            <div class="reservation-form">
+                <h2>Réservez votre trajet</h2>
+                <form action="https://formspree.io/f/xzzrenkq" method="POST">
+                    <div class="form-group">
+                        <label for="type-vehicule">Type de véhicule :</label>
+                        <select id="type-vehicule" name="type-vehicule">
+                            <option value="eco">Éco</option>
+                            <option value="prestige">Prestige</option>
+                            <option value="van">Van</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="from">Départ :</label>
+                        <input type="text" id="from" name="from" placeholder="Où vous partez ?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="to">Destination :</label>
+                        <input type="text" id="to" name="to" placeholder="Où vous allez ?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date et heure :</label>
+                        <input type="datetime-local" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nom :</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone :</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Votre numéro" required>
+                    </div>
+                    <button type="submit">Réserver maintenant</button>
+                    <div class="whatsapp-contact">
+                        <a href="https://wa.me/33638620664" target="_blank">Contactez-moi sur WhatsApp</a>
+                    </div>
+                </form>
             </div>
 
-            <div class="form-group">
-                <label for="date">Date</label>
-                <input type="date" id="date">
-            </div>
-
-            <div class="form-group">
-                <label for="vehicle">Véhicule</label>
-                <select id="vehicle">
-                    <option value="Eco">Eco</option>
-                    <option value="Prestige">Prestige</option>
-                    <option value="Van">Van</option>
-                </select>
-            </div>
-
-            <button type="submit">Réserver</button>
-
-            <!-- WhatsApp Contact Button -->
-            <div class="whatsapp">
-                <a href="https://wa.me/0638620664" target="_blank">
-                    Contactez-moi sur WhatsApp
-                </a>
+            <!-- Information à gauche -->
+            <div class="info-box">
+                <h3>Services VTC à Paris</h3>
+                <p>Notre service de transport privé vous offre des trajets confortables et sécurisés à travers Paris et ses environs. Réservez dès maintenant un VTC avec chauffeur privé pour tous vos déplacements : aéroports, gares, événements ou trajets quotidiens.</p>
             </div>
         </div>
+    </div>
+</section>
 
-        <!-- Main content -->
+<!-- Section des types de véhicules (Eco, Prestige, Van) avec images petites -->
+<section class="vehicles">
+    <div class="container">
+        <h2>Nos véhicules</h2>
+        <div class="vehicles-grid">
+            <div class="vehicle">
+                <h3>Véhicule Éco</h3>
+                <img src="https://www.ilyane-vtc.fr/images/voiture-vtc-paris/voiture-vtc-peugeot-508.jpg" alt="Véhicule Éco">
+                <p>Voyagez en toute simplicité avec notre voiture Éco, idéale pour un transport abordable et confortable à travers Paris.</p>
+            </div>
+            <div class="vehicle">
+                <h3>Véhicule Prestige</h3>
+                <img src="https://luxurycab-paris.com/wp-content/uploads/2023/04/location-de-voiture-avec-chauffeur-1024x589.jpg" alt="Véhicule Prestige">
+                <p>Profitez du luxe et du confort dans nos véhicules Prestige pour vos trajets les plus exigeants.</p>
+            </div>
+            <div class="vehicle">
+                <h3>Véhicule Van</h3>
+                <img src="https://taxivtcparis.fr/wp-content/uploads/2022/01/van--1024x555.png" alt="Véhicule Van">
+                <p>Voyagez en groupe ou avec votre famille dans un Van spacieux et confortable, pour des trajets sans compromis.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section pourquoi choisir notre service -->
+<section class="why-choose-us">
+    <div class="container">
+        <h2>Pourquoi choisir notre service VTC ?</h2>
         <div class="content">
-            <!-- Prestige Vehicle -->
-            <div class="vehicle-category">
-                <img src="https://luxurycab-paris.com/wp-content/uploads/2023/04/location-de-voiture-avec-chauffeur-1024x589.jpg" alt="Prestige Vehicle">
-                <div class="description">
-                    <h3>Prestige</h3>
-                    <p>Luxe et confort pour vos déplacements à Paris. Voyagez avec élégance dans nos voitures de prestige, idéales pour des événements spéciaux ou pour ceux qui recherchent un confort inégalé.</p>
-                </div>
+            <div class="info-box">
+                <h3>Transport à Paris et en Île-de-France</h3>
+                <p>Que ce soit pour un trajet d’affaires, un transfert à l’aéroport, ou un simple déplacement dans Paris, nous vous offrons un service fiable et ponctuel. Nos chauffeurs professionnels vous garantissent confort et sécurité tout au long de votre voyage. Faites confiance à notre expertise pour tous vos trajets dans Paris et ses environs.</p>
             </div>
 
-            <!-- Eco Vehicle -->
-            <div class="vehicle-category">
-                <img src="https://www.ilyane-vtc.fr/images/voiture-vtc-paris/voiture-vtc-peugeot-508.jpg" alt="Eco Vehicle">
-                <div class="description">
-                    <h3>Eco</h3>
-                    <p>Voyagez confortablement sans compromis sur le prix. Optez pour notre service Éco pour un trajet à petit prix sans sacrifier la qualité.</p>
-                </div>
+            <div class="info-box">
+                <h3>Services adaptés à vos besoins</h3>
+                <p>Nous proposons une large gamme de véhicules pour satisfaire toutes vos exigences : des voitures Éco pour un transport abordable, des véhicules Prestige pour une expérience de luxe et des Vans spacieux pour vos déplacements en groupe. Choisissez le service qui vous convient le mieux et réservez votre trajet en toute simplicité.</p>
             </div>
 
-            <!-- Van Vehicle -->
-            <div class="vehicle-category">
-                <img src="https://taxivtcparis.fr/wp-content/uploads/2022/01/van--1024x555.png" alt="Van Vehicle">
-                <div class="description">
-                    <h3>Van</h3>
-                    <p>Voyagez en groupe avec style et confort. L’idéal pour les familles et les groupes, notre service Van vous assure une expérience de voyage agréable et pratique.</p>
-                </div>
+            <div class="info-box">
+                <h3>Réservez en toute simplicité</h3>
+                <p>Grâce à notre système de réservation en ligne, vous pouvez facilement réserver votre VTC en quelques clics. Que ce soit pour un trajet immédiat ou une réservation à l’avance, notre site est conçu pour rendre votre expérience simple et rapide. Profitez également de notre service WhatsApp pour toute question ou assistance.</p>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Footer Text -->
-    <div class="footer">
-        <p>Transport VTC Paris - Confort et services adaptés à vos besoins.</p>
-        <p>Réservez dès maintenant et profitez d'un transport sécurisé et ponctuel.</p>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2025 VTC Paris - Tous droits réservés</p>
     </div>
+</footer>
+
 </body>
 </html>
