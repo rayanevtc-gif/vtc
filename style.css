@@ -51,30 +51,27 @@ body {
 }
 
 .reservation-form .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
 .reservation-form label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 .reservation-form input, .reservation-form select {
     width: 100%;
-    padding: 10px;
+    padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
+    transition: border-color 0.3s;
 }
 
-.reservation-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.2rem;
+.reservation-form input:focus, .reservation-form select:focus {
+    border-color: #00bfff;
+    outline: none;
 }
 
 .whatsapp-contact a {
@@ -171,4 +168,212 @@ footer {
     color: white;
     padding: 20px;
     text-align: center;
+}
+
+.main-nav {
+    background-color: rgba(45, 45, 45, 0.9);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #00bfff;
+}
+
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #00bfff;
+    outline: none;
+}
+
+.whatsapp-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    background-color: #25D366;
+    color: white;
+    padding: 0.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.whatsapp-link:hover {
+    background-color: #128C7E;
+}
+.whatsapp-contact a {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: #25d366;
+    font-weight: bold;
+}
+
+/* Section véhicules */
+.vehicles {
+    padding: 40px 0;
+    background-color: #f8f8f8;
+}
+
+.vehicles h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.vehicles-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.vehicle {
+    text-align: center;
+}
+
+.vehicle img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.vehicle h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.vehicle p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Section pourquoi choisir notre service */
+.why-choose-us {
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.why-choose-us .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-choose-us h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.why-choose-us .content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.why-choose-us .info-box {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.why-choose-us .info-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.why-choose-us .info-box p {
+    font-size: 1rem;
+    color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-nav {
+    background-color: rgba(45, 45, 45, 0.9);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #00bfff;
+}
+
+@media (max-width: 768px) {
+    .main-nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
 }
